@@ -1,0 +1,153 @@
+{
+"com.badlogic.gdx.graphics.g2d.BitmapFont": {
+	"GameFont": {
+		"file": "GameFont.fnt",
+		"scaledSize": -1,
+		"markupEnabled": false,
+		"flip": false
+	},
+	"MenuFont": {
+		"file": "MenuFont.fnt",
+		"scaledSize": -1,
+		"markupEnabled": false,
+		"flip": false
+	}
+},
+"com.badlogic.gdx.graphics.Color": {
+	"down": {
+		"r": 0.5137255,
+		"g": 0.5137255,
+		"b": 0.5137255,
+		"a": 1
+	},
+	"over": {
+		"r": 1,
+		"g": 0.55617976,
+		"b": 0,
+		"a": 1
+	},
+	"up": {
+		"r": 1,
+		"g": 1,
+		"b": 1,
+		"a": 1
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"default": {
+		"up": "up",
+		"down": "down",
+		"over": "over"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+	"default": {
+		"font": "GameFont",
+		"fontColor": "up"
+	},
+	"info": {
+		"font": "MenuFont"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle": {
+	"default": {
+		"font": "GameFont",
+		"fontColorSelected": "up",
+		"fontColorUnselected": "down",
+		"selection": "LabelUp",
+		"down": "Label",
+		"over": "LabelOver",
+		"background": "Label"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle": {
+	"default-horizontal": {
+		"background": "Label",
+		"disabledBackground": "LabelUp",
+		"knob": "ShopOver",
+		"knobBefore": "over",
+		"knobAfter": "down"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle": {
+	"default": {
+		"background": "Label",
+		"corner": "panel",
+		"vScroll": "panelBackground",
+		"vScrollKnob": "panel"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle": {
+	"default": {
+		"font": "GameFont",
+		"fontColor": "up",
+		"overFontColor": "over",
+		"disabledFontColor": "down",
+		"background": "Label",
+		"scrollStyle": "default",
+		"listStyle": "default",
+		"backgroundOver": "LabelOver",
+		"backgroundOpen": "LabelUp",
+		"backgroundDisabled": "Label"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.SplitPane$SplitPaneStyle": {
+	"default-horizontal": {
+		"handle": "panel"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
+	"default": {
+		"font": "MenuFont",
+		"fontColor": "up",
+		"downFontColor": "down",
+		"overFontColor": "over",
+		"up": "up",
+		"down": "down",
+		"over": "over"
+	},
+	"Buy": {
+		"font": "MenuFont",
+		"fontColor": "up",
+		"downFontColor": "down",
+		"overFontColor": "over",
+		"up": "ShopUp",
+		"down": "ShopDown",
+		"over": "ShopOver"
+	},
+	"Pong": {
+		"font": "GameFont",
+		"fontColor": "up",
+		"downFontColor": "down",
+		"overFontColor": "over",
+		"up": "PongBuyButton",
+		"down": "PongBuyButtonDown",
+		"over": "PongBuyButtonover"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
+	"default": {
+		"font": "GameFont",
+		"fontColor": "up",
+		"focusedFontColor": "up",
+		"disabledFontColor": "down",
+		"background": "Label",
+		"focusedBackground": "LabelUp",
+		"disabledBackground": "panel",
+		"cursor": "panel",
+		"selection": "over",
+		"messageFont": "MenuFont"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle": {
+	"default": {
+		"label": "default"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Touchpad$TouchpadStyle": {
+	"default": {
+		"background": "Label",
+		"knob": "ShopOver"
+	}
+}
+}

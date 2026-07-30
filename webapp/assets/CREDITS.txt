@@ -1,0 +1,4 @@
+This Game uses
+ libgdx-screenmanager
+made by https://github.com/crykn
+https://github.com/crykn/libgdx-screenmanager/blob/master/README.md

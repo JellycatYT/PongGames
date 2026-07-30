@@ -1,0 +1,125 @@
+
+doPongStyle.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+PongBuyButton
+  rotate: false
+  xy: 1, 62
+  size: 209, 275
+  orig: 209, 275
+  offset: 0, 0
+  index: -1
+PongBuyButtonDown
+  rotate: false
+  xy: 515, 580
+  size: 209, 275
+  orig: 209, 275
+  offset: 0, 0
+  index: -1
+PongBuyButtonover
+  rotate: false
+  xy: 1029, 1094
+  size: 209, 275
+  orig: 209, 275
+  offset: 0, 0
+  index: -1
+ShopDown
+  rotate: false
+  xy: 223, 390
+  size: 118, 112
+  orig: 118, 112
+  offset: 0, 0
+  index: -1
+ShopOver
+  rotate: false
+  xy: 737, 904
+  size: 118, 112
+  orig: 118, 112
+  offset: 0, 0
+  index: -1
+ShopUp
+  rotate: false
+  xy: 1251, 1418
+  size: 118, 112
+  orig: 118, 112
+  offset: 0, 0
+  index: -1
+down
+  rotate: false
+  xy: 1, 1
+  size: 110, 59
+  orig: 110, 59
+  offset: 0, 0
+  index: -1
+over
+  rotate: false
+  xy: 515, 520
+  size: 110, 58
+  orig: 110, 58
+  offset: 0, 0
+  index: -1
+up
+  rotate: false
+  xy: 1029, 1034
+  size: 110, 58
+  orig: 110, 58
+  offset: 0, 0
+  index: -1
+Label
+  rotate: false
+  xy: 1, 339
+  size: 220, 163
+  orig: 220, 163
+  offset: 0, 0
+  index: -1
+LabelOver
+  rotate: false
+  xy: 515, 857
+  size: 220, 159
+  orig: 220, 159
+  offset: 0, 0
+  index: -1
+LabelUp
+  rotate: false
+  xy: 1029, 1371
+  size: 220, 159
+  orig: 220, 159
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 343, 402
+  size: 20, 100
+  orig: 20, 100
+  offset: 0, 0
+  index: -1
+panelBackground
+  rotate: false
+  xy: 857, 916
+  size: 20, 100
+  orig: 20, 100
+  offset: 0, 0
+  index: -1
+GameFont
+  rotate: false
+  xy: 1, 1018
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+MenuFont1
+  rotate: false
+  xy: 1, 504
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+MenuFont2
+  rotate: false
+  xy: 515, 1018
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
