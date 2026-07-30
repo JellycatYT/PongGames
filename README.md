@@ -1,2 +1,2 @@
 # PongGames
-Pong Is Mascot of  JSLAV_games
+#TeaVM versions of my libGDX games
