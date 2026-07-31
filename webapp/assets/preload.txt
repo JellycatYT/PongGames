@@ -17,10 +17,10 @@ i:b:/Scene2d/GUI/panel.png:1476:1
 i:b:/Scene2d/GUI/LabelUp.png:15500:1
 i:b:/Scene2d/GUI/Label.png:10001:1
 i:b:/Scene2d/source/doPongStyle.json:3118:1
-i:b:/Scene2d/source/doPongStyle.atlas:1801:1
+i:b:/Scene2d/source/doPongStyle.atlas:1486:1
 i:b:/Scene2d/source/MenuFont1.png:193027:1
 i:b:/Scene2d/source/MenuFont2.png:55367:1
-i:b:/Scene2d/source/doPongStyle.png:961599:1
+i:b:/Scene2d/source/doPongStyle.png:379515:1
 i:b:/Scene2d/source/GameFont2.png:14314:1
 i:b:/Scene2d/source/GameFont.fnt:21799:1
 i:b:/Scene2d/source/GameFont1.png:151434:1

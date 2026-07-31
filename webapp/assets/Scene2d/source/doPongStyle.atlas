@@ -1,125 +1,104 @@
 
 doPongStyle.png
-size: 2048, 2048
+size: 1024, 1024
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
 PongBuyButton
   rotate: false
-  xy: 1, 62
+  xy: 1, 416
   size: 209, 275
   orig: 209, 275
   offset: 0, 0
   index: -1
 PongBuyButtonDown
   rotate: false
-  xy: 515, 580
+  xy: 1, 139
   size: 209, 275
   orig: 209, 275
   offset: 0, 0
   index: -1
 PongBuyButtonover
   rotate: false
-  xy: 1029, 1094
+  xy: 223, 581
   size: 209, 275
   orig: 209, 275
   offset: 0, 0
   index: -1
 ShopDown
   rotate: false
-  xy: 223, 390
+  xy: 445, 905
   size: 118, 112
   orig: 118, 112
   offset: 0, 0
   index: -1
 ShopOver
   rotate: false
-  xy: 737, 904
+  xy: 1, 25
   size: 118, 112
   orig: 118, 112
   offset: 0, 0
   index: -1
 ShopUp
   rotate: false
-  xy: 1251, 1418
+  xy: 565, 905
   size: 118, 112
   orig: 118, 112
   offset: 0, 0
   index: -1
 down
   rotate: false
-  xy: 1, 1
+  xy: 685, 958
   size: 110, 59
   orig: 110, 59
   offset: 0, 0
   index: -1
 over
   rotate: false
-  xy: 515, 520
+  xy: 797, 959
   size: 110, 58
   orig: 110, 58
   offset: 0, 0
   index: -1
 up
   rotate: false
-  xy: 1029, 1034
+  xy: 909, 959
   size: 110, 58
   orig: 110, 58
   offset: 0, 0
   index: -1
 Label
   rotate: false
-  xy: 1, 339
+  xy: 1, 854
   size: 220, 163
   orig: 220, 163
   offset: 0, 0
   index: -1
 LabelOver
   rotate: false
-  xy: 515, 857
+  xy: 1, 693
   size: 220, 159
   orig: 220, 159
   offset: 0, 0
   index: -1
 LabelUp
   rotate: false
-  xy: 1029, 1371
+  xy: 223, 858
   size: 220, 159
   orig: 220, 159
   offset: 0, 0
   index: -1
 panel
   rotate: false
-  xy: 343, 402
+  xy: 121, 37
   size: 20, 100
   orig: 20, 100
   offset: 0, 0
   index: -1
 panelBackground
   rotate: false
-  xy: 857, 916
+  xy: 143, 37
   size: 20, 100
   orig: 20, 100
-  offset: 0, 0
-  index: -1
-GameFont
-  rotate: false
-  xy: 1, 1018
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
-MenuFont1
-  rotate: false
-  xy: 1, 504
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
-MenuFont2
-  rotate: false
-  xy: 515, 1018
-  size: 512, 512
-  orig: 512, 512
   offset: 0, 0
   index: -1

@@ -20,7 +20,6 @@ public class AssetLoader {
 	public static Music ost2;
 	public static BitmapFont gameFont;
 	public static BitmapFont infoFont;
-
 	public static Texture gameBg;
 	public static final AssetManager PongLoader = new AssetManager();
 public static void loadMenu() {
@@ -72,13 +71,31 @@ public static void loadFonts() {
 	infoFont = PongLoader.get("Scene2d/source/MenuFont.fnt", BitmapFont.class);
 
 }
+public static void loadHUD() {
+	PongLoader.load("Scene2d/source/GameFont.fnt", BitmapFont.class);
+	PongLoader.load("Scene2d/source/MenuFont.fnt", BitmapFont.class);
+	PongLoader.load("Scene2d/source/doPongStyle.json", Skin.class, new SkinLoader.SkinParameter("Scene2d/source/doPongStyle.atlas"));
+	PongLoader.finishLoading();
+	gameFont = PongLoader.get("Scene2d/source/GameFont.fnt"); 
+	infoFont = PongLoader.get("Scene2d/source/MenuFont.fnt");
+	skin = PongLoader.get("Scene2d/source/doPongStyle.json",Skin.class);
+
+}
+public static void unloadHUD() {
+	
+	PongLoader.unload("Scene2d/source/GameFont.fnt");
+	PongLoader.unload("Scene2d/source/MenuFont.fnt");
+	
+}
 public static void unloadFont() {
 	PongLoader.unload("Scene2d/source/GameFont.fnt");
 	PongLoader.unload("Scene2d/source/MenuFont.fnt");
+
 }
 public static void unloadGame() {
 	PongLoader.unload("Backgrounds/bg.png");
 	PongLoader.unload("Sounds/Music/DO!DO!Pong3.1.ogg");
 
 }
+
 }
