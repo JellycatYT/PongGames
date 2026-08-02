@@ -15,11 +15,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import System.Hud;
 import Test.Test;
 import Test.Test1;
  
 
 public class Menu extends ScreenAdapter{
+	Hud HUD;
     Main game;
 	Table table;
 	Stage stage;
@@ -30,14 +32,17 @@ public class Menu extends ScreenAdapter{
 	}
 	@Override
   public void show() {
-    	
+    	AssetLoader.loadHUD();
 		AssetLoader.loadMenu();
     	AssetLoader.ost1.play();
     	AssetLoader.ost1.setLooping(true);
     	stage = new Stage(game.win,game.batch);
+
     	Gdx.input.setInputProcessor(stage);
     	play = new TextButton("Play",AssetLoader.skin);
     	quit = new TextButton("Quit", AssetLoader.skin);
+    	HUD = new Hud(game);
+
     	inputs();
     	
     	table = new Table();
@@ -69,6 +74,9 @@ System.out.println(
 
     	float w = game.win.getWorldWidth();
     	float h = game.win.getWorldHeight();
+    	HUD.update();
+    	HUD.debug();
+    	
     	secret();
     	ScreenUtils.clear(0,0,0,0);
     	game.win.apply();
@@ -79,9 +87,13 @@ System.out.println(
     	game.batch.end();
     	stage.act(delta);
     	stage.draw();
+   HUD.getStage().act(delta);
+   HUD.getStage().draw();
     }
     public void dispose(){
     	stage.dispose();
+    	AssetLoader.unloadMenu();
+    	AssetLoader.unloadHUD();
     }
     private void inputs() {
     	play.addListener(new ClickListener() {
@@ -107,7 +119,7 @@ System.out.println(
     			table.setTouchable(Touchable.disabled);
     			fadeOut(() ->{
 					AssetLoader.unloadMenu();
-
+					AssetLoader.PongLoader.dispose();
         			Gdx.app.exit();
     			});
     			

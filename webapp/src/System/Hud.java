@@ -75,7 +75,7 @@ table.add(platformLabel).expandX().padTop(5).left();
 		return stage;
 	}
 	public void debug() {
-		if((Gdx.input.isKeyJustPressed(Input.Keys.F3))) {
+		if((Gdx.input.isKeyJustPressed(Input.Keys.I))) {
 			if(debugOn) {
 				debugOn = false;
 				stage.getRoot().setVisible(false);
