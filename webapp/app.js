@@ -12603,10 +12603,10 @@ cbgu_Timer$Task_isScheduled = $this => {
 };
 function cbgssu_TextField$1() {
     cbgu_Timer$Task.call(this);
-    this.$this$030 = null;
+    this.$this$031 = null;
 }
 let cbgssu_TextField$1__init_ = ($this, $this$0) => {
-    $this.$this$030 = $this$0;
+    $this.$this$031 = $this$0;
     cbgu_Timer$Task__init_($this);
 },
 cbgssu_TextField$1__init_0 = var_0 => {
@@ -12615,11 +12615,11 @@ cbgssu_TextField$1__init_0 = var_0 => {
     return var_1;
 },
 cbgssu_TextField$1_run = $this => {
-    if ($this.$this$030.$getStage() === null) {
+    if ($this.$this$031.$getStage() === null) {
         $this.$cancel();
         return;
     }
-    $this.$this$030.$cursorOn = $this.$this$030.$cursorOn ? 0 : 1;
+    $this.$this$031.$cursorOn = $this.$this$031.$cursorOn ? 0 : 1;
     cbg_Gdx_graphics.$requestRendering();
 },
 jur_AheadFSet = $rt_classWithoutFields(jur_FSet),
@@ -13143,10 +13143,10 @@ cbgggp_ResourceData$Configurable = $rt_classWithoutFields(0),
 cbgggpb_ParticleBatch = $rt_classWithoutFields(0);
 function cgxgtbw_WebClipboard$ClipboardWriteHandler() {
     jl_Object.call(this);
-    this.$this$028 = null;
+    this.$this$029 = null;
 }
 let cgxgtbw_WebClipboard$ClipboardWriteHandler__init_ = ($this, var$1) => {
-    $this.$this$028 = var$1;
+    $this.$this$029 = var$1;
     jl_Object__init_($this);
 },
 cgxgtbw_WebClipboard$ClipboardWriteHandler__init_0 = var_0 => {
@@ -13155,15 +13155,15 @@ cgxgtbw_WebClipboard$ClipboardWriteHandler__init_0 = var_0 => {
     return var_1;
 },
 cgxgtbw_WebClipboard$ClipboardWriteHandler_granted = $this => {
-    $this.$this$028.$hasWritePermissions = 1;
-    cgxgtbw_WebClipboard_setContentNATIVE$js_body$_4($rt_ustr($this.$this$028.$content));
+    $this.$this$029.$hasWritePermissions = 1;
+    cgxgtbw_WebClipboard_setContentNATIVE$js_body$_4($rt_ustr($this.$this$029.$content));
 },
 cgxgtbw_WebClipboard$ClipboardWriteHandler_denied = $this => {
-    $this.$this$028.$hasWritePermissions = 0;
+    $this.$this$029.$hasWritePermissions = 0;
 },
 cgxgtbw_WebClipboard$ClipboardWriteHandler_prompt = $this => {
-    $this.$this$028.$hasWritePermissions = 1;
-    cgxgtbw_WebClipboard_setContentNATIVE$js_body$_4($rt_ustr($this.$this$028.$content));
+    $this.$this$029.$hasWritePermissions = 1;
+    cgxgtbw_WebClipboard_setContentNATIVE$js_body$_4($rt_ustr($this.$this$029.$content));
 },
 cgxgtbw_WebClipboard$ClipboardWriteHandler_granted$exported$0 = var$1 => {
     var$1.$granted();
@@ -48013,10 +48013,10 @@ cbgggu_TextureDescriptor_compareTo = ($this, $o) => {
 };
 function cpd_Menu$1() {
     cbgssu_ClickListener.call(this);
-    this.$this$032 = null;
+    this.$this$027 = null;
 }
 let cpd_Menu$1__init_ = ($this, $this$0) => {
-    $this.$this$032 = $this$0;
+    $this.$this$027 = $this$0;
     cbgssu_ClickListener__init_($this);
 },
 cpd_Menu$1__init_0 = var_0 => {
@@ -48026,16 +48026,17 @@ cpd_Menu$1__init_0 = var_0 => {
 },
 cpd_Menu$1_clicked = ($this, $e, $x, $y) => {
     let var$4;
-    if ($this.$this$032.$table.$isTouchable())
-        return;
-    var$4 = $this.$this$032.$table;
+    var$4 = $this.$this$027.$table.$getTouchable();
     cbgss_Touchable_$callClinit();
-    var$4.$setTouchable(cbgss_Touchable_disabled);
-    cpd_Menu_fadeOut($this.$this$032, cpd_Menu$1$clicked$lambda$_1_0__init_0($this));
+    if (var$4 === cbgss_Touchable_disabled)
+        return;
+    $this.$this$027.$isWeb();
+    $this.$this$027.$table.$setTouchable(cbgss_Touchable_disabled);
+    cpd_Menu_fadeOut($this.$this$027, cpd_Menu$1$clicked$lambda$_1_0__init_0($this));
 },
 cpd_Menu$1_lambda$clicked$0 = $this => {
     cpd_AssetLoader_unloadMenu();
-    $this.$this$032.$game.$setScreen(cpd_GameScreen__init_0($this.$this$032.$game));
+    $this.$this$027.$game.$setScreen(cpd_GameScreen__init_0($this.$this$027.$game));
 };
 function cpd_Menu$2() {
     cbgssu_ClickListener.call(this);
@@ -87255,10 +87256,10 @@ cbgi_GestureDetector$VelocityTracker_getAverage = ($this, $values, $numSamples) 
 };
 function cbgi_GestureDetector$1() {
     cbgu_Timer$Task.call(this);
-    this.$this$029 = null;
+    this.$this$030 = null;
 }
 let cbgi_GestureDetector$1__init_ = ($this, $this$0) => {
-    $this.$this$029 = $this$0;
+    $this.$this$030 = $this$0;
     cbgu_Timer$Task__init_($this);
 },
 cbgi_GestureDetector$1__init_0 = var_0 => {
@@ -87267,8 +87268,8 @@ cbgi_GestureDetector$1__init_0 = var_0 => {
     return var_1;
 },
 cbgi_GestureDetector$1_run = $this => {
-    if (!$this.$this$029.$longPressFired)
-        $this.$this$029.$longPressFired = $this.$this$029.$listener.$longPress0($this.$this$029.$pointer1.$x, $this.$this$029.$pointer1.$y);
+    if (!$this.$this$030.$longPressFired)
+        $this.$this$030.$longPressFired = $this.$this$030.$listener.$longPress0($this.$this$030.$pointer1.$x, $this.$this$030.$pointer1.$y);
 };
 function jur_Matcher() {
     let a = this; jl_Object.call(a);
@@ -89200,10 +89201,10 @@ function cgxgtbwa_AssetDownloadImpl$1() {
     let a = this; jl_Object.call(a);
     a.$val$listener = null;
     a.$val$url0 = null;
-    a.$this$031 = null;
+    a.$this$032 = null;
 }
 let cgxgtbwa_AssetDownloadImpl$1__init_ = ($this, $this$0, var$2, var$3) => {
-    $this.$this$031 = $this$0;
+    $this.$this$032 = $this$0;
     $this.$val$listener = var$2;
     $this.$val$url0 = var$3;
     jl_Object__init_($this);
@@ -89215,12 +89216,12 @@ cgxgtbwa_AssetDownloadImpl$1__init_0 = (var_0, var_1, var_2) => {
 },
 cgxgtbwa_AssetDownloadImpl$1_onSuccess = ($this, $url, $result) => {
     let var$3, var$4, var$5, var$6;
-    var$3 = $this.$this$031;
+    var$3 = $this.$this$032;
     var$4 = $result === null ? 0 : 1;
     var$5 = jl_StringBuilder__init_();
     jl_StringBuilder_append2(jl_StringBuilder_append(jl_StringBuilder_append(jl_StringBuilder_append(var$5, $rt_s(705)), $url), $rt_s(1947)), var$4);
     cgxgtbwa_AssetDownloadImpl_log(var$3, $rt_s(1948), jl_StringBuilder_toString(var$5));
-    if ($this.$this$031.$showLogs) {
+    if ($this.$this$032.$showLogs) {
         var$5 = jl_System_out();
         var$6 = jl_StringBuilder__init_();
         jl_StringBuilder_append(jl_StringBuilder_append(var$6, $rt_s(1949)), $url);
@@ -89231,11 +89232,11 @@ cgxgtbwa_AssetDownloadImpl$1_onSuccess = ($this, $url, $result) => {
 },
 cgxgtbwa_AssetDownloadImpl$1_onFailure = ($this, $url) => {
     let var$2, var$3, var$4;
-    var$2 = $this.$this$031;
+    var$2 = $this.$this$032;
     var$3 = jl_StringBuilder__init_();
     jl_StringBuilder_append(jl_StringBuilder_append(var$3, $rt_s(705)), $url);
     cgxgtbwa_AssetDownloadImpl_log(var$2, $rt_s(1950), jl_StringBuilder_toString(var$3));
-    if ($this.$this$031.$showLogs) {
+    if ($this.$this$032.$showLogs) {
         var$4 = jl_System_err();
         var$2 = jl_StringBuilder__init_();
         jl_StringBuilder_append(jl_StringBuilder_append(var$2, $rt_s(1951)), $url);
@@ -89246,7 +89247,7 @@ cgxgtbwa_AssetDownloadImpl$1_onFailure = ($this, $url) => {
 },
 cgxgtbwa_AssetDownloadImpl$1_onProgress = ($this, $total, $loaded) => {
     let var$3, var$4, var$5;
-    var$3 = $this.$this$031;
+    var$3 = $this.$this$032;
     var$4 = $this.$val$url0;
     var$5 = jl_StringBuilder__init_();
     jl_StringBuilder_append0(jl_StringBuilder_append(jl_StringBuilder_append0(jl_StringBuilder_append(jl_StringBuilder_append(jl_StringBuilder_append(var$5, $rt_s(705)), var$4), $rt_s(718)), $loaded), $rt_s(719)), $total);
@@ -91439,10 +91440,10 @@ jt_DateFormatElement$NumericHour_hashCode = $this => {
 };
 function cbgssu_Button$1() {
     cbgssu_ClickListener.call(this);
-    this.$this$027 = null;
+    this.$this$028 = null;
 }
 let cbgssu_Button$1__init_ = ($this, $this$0) => {
-    $this.$this$027 = $this$0;
+    $this.$this$028 = $this$0;
     cbgssu_ClickListener__init_($this);
 },
 cbgssu_Button$1__init_0 = var_0 => {
@@ -91451,9 +91452,9 @@ cbgssu_Button$1__init_0 = var_0 => {
     return var_1;
 },
 cbgssu_Button$1_clicked = ($this, $event, $x, $y) => {
-    if ($this.$this$027.$isDisabled())
+    if ($this.$this$028.$isDisabled())
         return;
-    $this.$this$027.$setChecked($this.$this$027.$isChecked0 ? 0 : 1, 1);
+    $this.$this$028.$setChecked($this.$this$028.$isChecked0 ? 0 : 1, 1);
 };
 function cbgssa_SizeToAction() {
     let a = this; cbgssa_TemporalAction.call(a);
@@ -97096,7 +97097,7 @@ $rt_reflection([
     }, 
     cbgssu_TextField$1, {
         f: [
-            ["this$0", 32784, cbgssu_TextField, o => o.$this$030, (o, v) => o.$this$030 = v]
+            ["this$0", 32784, cbgssu_TextField, o => o.$this$031, (o, v) => o.$this$031 = v]
         ],
         m: [
             ["<init>", 0, $rt_voidcls, [cbgssu_TextField], cbgssu_TextField$1__init_],
@@ -102304,7 +102305,7 @@ $rt_reflection([
     }, 
     cbgssu_Button$1, {
         f: [
-            ["this$0", 32784, cbgssu_Button, o => o.$this$027, (o, v) => o.$this$027 = v]
+            ["this$0", 32784, cbgssu_Button, o => o.$this$028, (o, v) => o.$this$028 = v]
         ],
         m: [
             ["<init>", 0, $rt_voidcls, [cbgssu_Button], cbgssu_Button$1__init_],

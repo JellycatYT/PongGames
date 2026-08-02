@@ -106,7 +106,9 @@ System.out.println(
     		@Override
     		
     		public void clicked(InputEvent e, float x,float y) {
-    			if(table.isTouchable()) return;
+    			if(table.getTouchable() == Touchable.disabled) return;
+    			isWeb();
+
     			table.setTouchable(Touchable.disabled);
     			 fadeOut(() -> {
     				 AssetLoader.unloadMenu();
