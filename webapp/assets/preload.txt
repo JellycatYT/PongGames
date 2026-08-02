@@ -9,22 +9,20 @@ i:b:/Scene2d/Button/PongBuyButtonDown.png:37088:1
 i:b:/Scene2d/Button/down.png:5409:1
 i:b:/Scene2d/Button/PongBuyButton.png:38696:1
 i:b:/Scene2d/Button/ShopDown.png:24783:1
-i:b:/Scene2d/Font/GameFont.fnt:21799:1
+i:b:/Scene2d/Font/GameFont.fnt:11125:1
 i:b:/Scene2d/Font/MenuFont.fnt:21831:1
 i:b:/Scene2d/GUI/LabelOver.png:13826:1
 i:b:/Scene2d/GUI/panelBackground.png:1048:1
 i:b:/Scene2d/GUI/panel.png:1476:1
 i:b:/Scene2d/GUI/LabelUp.png:15500:1
 i:b:/Scene2d/GUI/Label.png:10001:1
-i:b:/Scene2d/source/doPongStyle.json:3118:1
-i:b:/Scene2d/source/doPongStyle.atlas:1486:1
+i:b:/Scene2d/source/doPongStyle.json:2920:1
+i:b:/Scene2d/source/doPongStyle.atlas:1801:1
 i:b:/Scene2d/source/MenuFont1.png:193027:1
 i:b:/Scene2d/source/MenuFont2.png:55367:1
-i:b:/Scene2d/source/doPongStyle.png:379515:1
-i:b:/Scene2d/source/GameFont2.png:14314:1
-i:b:/Scene2d/source/GameFont.fnt:21799:1
-i:b:/Scene2d/source/GameFont1.png:151434:1
-i:b:/Scene2d/source/GameFont.png:121091:1
+i:b:/Scene2d/source/doPongStyle.png:943371:1
+i:b:/Scene2d/source/GameFont.fnt:11125:1
+i:b:/Scene2d/source/GameFont.png:115828:1
 i:b:/Scene2d/source/MenuFont.fnt:21831:1
 i:b:/Title/Title.png:100129:1
 i:b:/Backgrounds/Grass.png:181318:1
@@ -32,7 +30,7 @@ i:b:/Backgrounds/bg.png:182537:1
 i:b:/Backgrounds/MenuBgSmall.png:251847:1
 i:b:/Droplets/droplets.atlas:92:1
 i:b:/Droplets/droplets.png:16484:1
-i:b:/assets.txt:1073:1
+i:b:/assets.txt:1015:1
 i:b:/Sounds/Music/DO!DO!Pong3.1.ogg:183971:1
 i:b:/Sounds/Music/Do!Do!Pong Game Theme final version.ogg:102565:1
 i:b:/Sounds/Music/menu.ogg:87686:1

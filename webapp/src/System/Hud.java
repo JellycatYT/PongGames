@@ -46,21 +46,15 @@ public Hud(Main game) {
 	this.platformLabel = new Label("Platform name"+Gdx.app.getType(),AssetLoader.skin);
 table.top();
 table.setFillParent(true);
-table.add(fpsLabel).expandX().padTop(5).left();
 
+table.add(fpsLabel).expandX().left();
+table.add(osLabel).expandX().right();
 table.row();
-table.add(skinID).expandX().padTop(5).left();
+table.add(skinID).expandX().left();
+table.add(clockLabel).expandX().right();
 table.row();
-table.add(scoreText).expandX().padTop(5).left();
-
-table.row();
-table.add(clockLabel).expandX().padTop(5).left();
-
-table.row();
-table.add(osLabel).expandX().padTop(5).left();
-
-table.row();
-table.add(platformLabel).expandX().padTop(5).left();
+table.add(scoreText).expandX().left();
+table.add(platformLabel).expandX().right();
 }
 	public void update() {
 		fpsLabel.setText("FPS: " + Gdx.graphics.getFramesPerSecond());

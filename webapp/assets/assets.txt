@@ -23,8 +23,6 @@ Scene2d/GUI/panel.png
 Scene2d/GUI/panelBackground.png
 Scene2d/source/GameFont.fnt
 Scene2d/source/GameFont.png
-Scene2d/source/GameFont1.png
-Scene2d/source/GameFont2.png
 Scene2d/source/MenuFont.fnt
 Scene2d/source/MenuFont1.png
 Scene2d/source/MenuFont2.png

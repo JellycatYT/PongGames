@@ -2719,7 +2719,7 @@ function cbgssu_Table() {
     a.$rowHeight = null;
     a.$expandWidth = null;
     a.$expandHeight = null;
-    a.$padTop4 = null;
+    a.$padTop3 = null;
     a.$padLeft4 = null;
     a.$padBottom4 = null;
     a.$padRight2 = null;
@@ -2760,7 +2760,7 @@ cbgssu_Table__init_0 = ($this, $skin) => {
     $this.$cells = cbgu_Array__init_0(4);
     $this.$columnDefaults = cbgu_Array__init_0(2);
     $this.$sizeInvalid0 = 1;
-    $this.$padTop4 = cbgssu_Table_backgroundTop;
+    $this.$padTop3 = cbgssu_Table_backgroundTop;
     $this.$padLeft4 = cbgssu_Table_backgroundLeft;
     $this.$padBottom4 = cbgssu_Table_backgroundBottom;
     $this.$padRight2 = cbgssu_Table_backgroundRight;
@@ -2802,7 +2802,7 @@ cbgssu_Table_draw = ($this, $batch, $parentAlpha) => {
             $padLeft = $this.$padLeft4.$get0($this);
             $padBottom = $this.$padBottom4.$get0($this);
             var$5 = $this.$getWidth() - $padLeft - $this.$padRight2.$get0($this);
-            var$6 = $this.$getHeight() - $padBottom - $this.$padTop4.$get0($this);
+            var$6 = $this.$getHeight() - $padBottom - $this.$padTop3.$get0($this);
             if ($this.$clipBegin($padLeft, $padBottom, var$5, var$6)) {
                 $this.$drawChildren($batch, $parentAlpha);
                 $batch.$flush();
@@ -3088,7 +3088,7 @@ cbgssu_Table_debug = ($this, $debug) => {
     return $this;
 },
 cbgssu_Table_getPadTop = $this => {
-    return $this.$padTop4.$get0($this);
+    return $this.$padTop3.$get0($this);
 },
 cbgssu_Table_getPadLeft = $this => {
     return $this.$padLeft4.$get0($this);
@@ -3155,7 +3155,7 @@ cbgssu_Table_computeSize = $this => {
                 var$19[$column] = $c.$expandX0.$intValue();
         }
         $c.$computedPadLeft = $c.$padLeft2.$get0($a) + (!$column ? 0.0 : jl_Math_max(0.0, $c.$spaceLeft.$get0($a) - $spaceRight));
-        $c.$computedPadTop = $c.$padTop2.$get0($a);
+        $c.$computedPadTop = $c.$padTop1.$get0($a);
         if ($c.$cellAboveIndex != (-1)) {
             $above = var$13[$c.$cellAboveIndex];
             $c.$computedPadTop = $c.$computedPadTop + jl_Math_max(0.0, $c.$spaceTop.$get0($a) - $above.$spaceBottom.$get0($a));
@@ -3336,7 +3336,7 @@ cbgssu_Table_computeSize = $this => {
         $i = $i + 1 | 0;
     }
     $hpadding = $this.$padLeft4.$get0($this) + $this.$padRight2.$get0($this);
-    $vpadding = $this.$padTop4.$get0($this) + $this.$padBottom4.$get0($this);
+    $vpadding = $this.$padTop3.$get0($this) + $this.$padBottom4.$get0($this);
     $this.$tableMinWidth = $hpadding;
     $this.$tablePrefWidth = $hpadding;
     $i = 0;
@@ -3373,7 +3373,7 @@ cbgssu_Table_layout = $this => {
     $rowHeight = $this.$rowHeight;
     $padLeft = $this.$padLeft4.$get0($this);
     $hpadding = $padLeft + $this.$padRight2.$get0($this);
-    $padTop = $this.$padTop4.$get0($this);
+    $padTop = $this.$padTop3.$get0($this);
     $vpadding = $padTop + $this.$padBottom4.$get0($this);
     $totalGrowWidth = $this.$tablePrefWidth - $this.$tableMinWidth;
     if ($totalGrowWidth === 0.0)
@@ -3723,7 +3723,7 @@ cbgssu_Table_drawDebug = ($this, $shapes) => {
                 $x = $this.$padLeft4.$get0($this);
                 $y = $this.$padBottom4.$get0($this);
                 $width = $width - ($x + $this.$padRight2.$get0($this));
-                $height = $height - ($y + $this.$padTop4.$get0($this));
+                $height = $height - ($y + $this.$padTop3.$get0($this));
             }
             if ($this.$clipBegin($x, $y, $width, $height)) {
                 $this.$drawDebugChildren($shapes);
@@ -10886,7 +10886,7 @@ function cbgssu_Container() {
     a.$prefHeight6 = null;
     a.$maxWidth2 = null;
     a.$maxHeight1 = null;
-    a.$padTop1 = null;
+    a.$padTop0 = null;
     a.$padLeft = null;
     a.$padBottom2 = null;
     a.$padRight0 = null;
@@ -10907,7 +10907,7 @@ let cbgssu_Container__init_ = $this => {
     $this.$prefHeight6 = cbgssu_Value_prefHeight;
     $this.$maxWidth2 = cbgssu_Value_zero;
     $this.$maxHeight1 = cbgssu_Value_zero;
-    $this.$padTop1 = cbgssu_Value_zero;
+    $this.$padTop0 = cbgssu_Value_zero;
     $this.$padLeft = cbgssu_Value_zero;
     $this.$padBottom2 = cbgssu_Value_zero;
     $this.$padRight0 = cbgssu_Value_zero;
@@ -10946,7 +10946,7 @@ cbgssu_Container_draw = ($this, $batch, $parentAlpha) => {
             $padLeft = $this.$padLeft.$get0($this);
             $padBottom = $this.$padBottom2.$get0($this);
             var$5 = $this.$getWidth() - $padLeft - $this.$padRight0.$get0($this);
-            var$6 = $this.$getHeight() - $padBottom - $this.$padTop1.$get0($this);
+            var$6 = $this.$getHeight() - $padBottom - $this.$padTop0.$get0($this);
             if ($this.$clipBegin($padLeft, $padBottom, var$5, var$6)) {
                 $this.$drawChildren($batch, $parentAlpha);
                 $batch.$flush();
@@ -10987,7 +10987,7 @@ cbgssu_Container_layout = $this => {
     $padLeft = $this.$padLeft.$get0($this);
     $padBottom = $this.$padBottom2.$get0($this);
     $containerWidth = $this.$getWidth() - $padLeft - $this.$padRight0.$get0($this);
-    $containerHeight = $this.$getHeight() - $padBottom - $this.$padTop1.$get0($this);
+    $containerHeight = $this.$getHeight() - $padBottom - $this.$padTop0.$get0($this);
     $minWidth = $this.$minWidth3.$get0($this.$actor);
     $minHeight = $this.$minHeight2.$get0($this.$actor);
     $prefWidth = $this.$prefWidth6.$get0($this.$actor);
@@ -11093,14 +11093,14 @@ cbgssu_Container_maxWidth = ($this, $maxWidth) => {
 cbgssu_Container_pad = ($this, $pad) => {
     if ($pad === null)
         $rt_throw(jl_IllegalArgumentException__init_($rt_s(242)));
-    $this.$padTop1 = $pad;
+    $this.$padTop0 = $pad;
     $this.$padLeft = $pad;
     $this.$padBottom2 = $pad;
     $this.$padRight0 = $pad;
     return $this;
 },
 cbgssu_Container_pad0 = ($this, $top, $left, $bottom, $right) => {
-    $this.$padTop1 = cbgssu_Value$Fixed_valueOf($top);
+    $this.$padTop0 = cbgssu_Value$Fixed_valueOf($top);
     $this.$padLeft = cbgssu_Value$Fixed_valueOf($left);
     $this.$padBottom2 = cbgssu_Value$Fixed_valueOf($bottom);
     $this.$padRight0 = cbgssu_Value$Fixed_valueOf($right);
@@ -11115,7 +11115,7 @@ cbgssu_Container_getMinWidth = $this => {
     return $this.$minWidth3.$get0($this.$actor) + $this.$padLeft.$get0($this) + $this.$padRight0.$get0($this);
 },
 cbgssu_Container_getMinHeight = $this => {
-    return $this.$minHeight2.$get0($this.$actor) + $this.$padTop1.$get0($this) + $this.$padBottom2.$get0($this);
+    return $this.$minHeight2.$get0($this.$actor) + $this.$padTop0.$get0($this) + $this.$padBottom2.$get0($this);
 },
 cbgssu_Container_getPrefWidth = $this => {
     let $v;
@@ -11129,7 +11129,7 @@ cbgssu_Container_getPrefHeight = $this => {
     $v = $this.$prefHeight6.$get0($this.$actor);
     if ($this.$background3 !== null)
         $v = jl_Math_max($v, $this.$background3.$getMinHeight());
-    return jl_Math_max($this.$getMinHeight(), $v + $this.$padTop1.$get0($this) + $this.$padBottom2.$get0($this));
+    return jl_Math_max($this.$getMinHeight(), $v + $this.$padTop0.$get0($this) + $this.$padBottom2.$get0($this));
 },
 cbgssu_Container_getMaxWidth = $this => {
     let $v;
@@ -11142,7 +11142,7 @@ cbgssu_Container_getMaxHeight = $this => {
     let $v;
     $v = $this.$maxHeight1.$get0($this.$actor);
     if ($v > 0.0)
-        $v = $v + $this.$padTop1.$get0($this) + $this.$padBottom2.$get0($this);
+        $v = $v + $this.$padTop0.$get0($this) + $this.$padBottom2.$get0($this);
     return $v;
 },
 cbgssu_Container_hit = ($this, $x, $y, $touchable) => {
@@ -11185,7 +11185,7 @@ cbgssu_Container_drawDebug = ($this, $shapes) => {
                 $draw = $this.$clipBegin(0.0, 0.0, $this.$getWidth(), $this.$getHeight());
             else {
                 var$5 = $this.$getWidth() - $padLeft - $this.$padRight0.$get0($this);
-                var$6 = $this.$getHeight() - $padBottom - $this.$padTop1.$get0($this);
+                var$6 = $this.$getHeight() - $padBottom - $this.$padTop0.$get0($this);
                 $draw = $this.$clipBegin($padLeft, $padBottom, var$5, var$6);
             }
             if ($draw) {
@@ -19773,7 +19773,6 @@ cpd_AssetLoader_loadDroplet = () => {
     cpd_AssetLoader_DropAtlas = cpd_AssetLoader_PongLoader.$get10($rt_s(549), $rt_cls(cbggg_TextureAtlas));
 },
 cpd_AssetLoader_loadHUD = () => {
-    let var$1;
     cpd_AssetLoader_$callClinit();
     cpd_AssetLoader_PongLoader.$load3($rt_s(550), $rt_cls(cbggg_BitmapFont));
     cpd_AssetLoader_PongLoader.$load3($rt_s(551), $rt_cls(cbggg_BitmapFont));
@@ -19782,10 +19781,6 @@ cpd_AssetLoader_loadHUD = () => {
     cpd_AssetLoader_gameFont = cpd_AssetLoader_PongLoader.$get14($rt_s(550));
     cpd_AssetLoader_infoFont = cpd_AssetLoader_PongLoader.$get14($rt_s(551));
     cpd_AssetLoader_skin = cpd_AssetLoader_PongLoader.$get10($rt_s(541), $rt_cls(cbgssu_Skin));
-    var$1 = (cpd_AssetLoader_gameFont.$getRegion()).$getTexture();
-    cbgg_Texture$TextureFilter_$callClinit();
-    var$1.$setFilter(cbgg_Texture$TextureFilter_Nearest, cbgg_Texture$TextureFilter_Nearest);
-    ((cpd_AssetLoader_infoFont.$getRegion()).$getTexture()).$setFilter(cbgg_Texture$TextureFilter_Nearest, cbgg_Texture$TextureFilter_Nearest);
 },
 cpd_AssetLoader__clinit_ = () => {
     cpd_AssetLoader_PongLoader = cbga_AssetManager__init_2();
@@ -21709,7 +21704,7 @@ function cbggg_NinePatch() {
     a.$color9 = null;
     a.$padLeft0 = 0.0;
     a.$padRight = 0.0;
-    a.$padTop0 = 0.0;
+    a.$padTop = 0.0;
     a.$padBottom0 = 0.0;
 }
 let cbggg_NinePatch_tmpDrawColor = null,
@@ -21728,7 +21723,7 @@ cbggg_NinePatch__init_ = ($this, $region, $left, $right, $top, $bottom) => {
     $this.$color9 = var$6;
     $this.$padLeft0 = (-1.0);
     $this.$padRight = (-1.0);
-    $this.$padTop0 = (-1.0);
+    $this.$padTop = (-1.0);
     $this.$padBottom0 = (-1.0);
     if ($region === null)
         $rt_throw(jl_IllegalArgumentException__init_($rt_s(569)));
@@ -21796,7 +21791,7 @@ cbggg_NinePatch__init_1 = ($this, $region) => {
     $this.$color9 = var$2;
     $this.$padLeft0 = (-1.0);
     $this.$padRight = (-1.0);
-    $this.$padTop0 = (-1.0);
+    $this.$padTop = (-1.0);
     $this.$padBottom0 = (-1.0);
     var$3 = $rt_createArray(cbggg_TextureRegion, 9);
     var$4 = var$3.data;
@@ -21827,7 +21822,7 @@ cbggg_NinePatch__init_0 = ($this, $ninePatch, $color) => {
     $this.$color9 = var$3;
     $this.$padLeft0 = (-1.0);
     $this.$padRight = (-1.0);
-    $this.$padTop0 = (-1.0);
+    $this.$padTop = (-1.0);
     $this.$padBottom0 = (-1.0);
     $this.$texture1 = $ninePatch.$texture1;
     $this.$bottomLeft = $ninePatch.$bottomLeft;
@@ -21846,7 +21841,7 @@ cbggg_NinePatch__init_0 = ($this, $ninePatch, $color) => {
     $this.$topHeight = $ninePatch.$topHeight;
     $this.$bottomHeight = $ninePatch.$bottomHeight;
     $this.$padLeft0 = $ninePatch.$padLeft0;
-    $this.$padTop0 = $ninePatch.$padTop0;
+    $this.$padTop = $ninePatch.$padTop;
     $this.$padBottom0 = $ninePatch.$padBottom0;
     $this.$padRight = $ninePatch.$padRight;
     $this.$vertices1 = $rt_createFloatArray($ninePatch.$vertices1.data.length);
@@ -22078,7 +22073,7 @@ cbggg_NinePatch_getTotalHeight = $this => {
 cbggg_NinePatch_setPadding = ($this, $left, $right, $top, $bottom) => {
     $this.$padLeft0 = $left;
     $this.$padRight = $right;
-    $this.$padTop0 = $top;
+    $this.$padTop = $top;
     $this.$padBottom0 = $bottom;
 },
 cbggg_NinePatch_getPadLeft = $this => {
@@ -22092,8 +22087,8 @@ cbggg_NinePatch_getPadRight = $this => {
     return $this.$getRightWidth();
 },
 cbggg_NinePatch_getPadTop = $this => {
-    if ($this.$padTop0 !== (-1.0))
-        return $this.$padTop0;
+    if ($this.$padTop !== (-1.0))
+        return $this.$padTop;
     return $this.$getTopHeight();
 },
 cbggg_NinePatch_getPadBottom = $this => {
@@ -22112,8 +22107,8 @@ cbggg_NinePatch_scale = ($this, $scaleX, $scaleY) => {
         $this.$padLeft0 = $this.$padLeft0 * $scaleX;
     if ($this.$padRight !== (-1.0))
         $this.$padRight = $this.$padRight * $scaleX;
-    if ($this.$padTop0 !== (-1.0))
-        $this.$padTop0 = $this.$padTop0 * $scaleY;
+    if ($this.$padTop !== (-1.0))
+        $this.$padTop = $this.$padTop * $scaleY;
     if ($this.$padBottom0 !== (-1.0))
         $this.$padBottom0 = $this.$padBottom0 * $scaleY;
 },
@@ -23615,12 +23610,12 @@ cbggg_Material__clinit_ = () => {
 function cbggg_TextureAtlas() {
     let a = this; jl_Object.call(a);
     a.$textures0 = null;
-    a.$regions0 = null;
+    a.$regions = null;
 }
 let cbggg_TextureAtlas__init_ = $this => {
     jl_Object__init_($this);
     $this.$textures0 = cbgu_ObjectSet__init_2(4);
-    $this.$regions0 = cbgu_Array__init_();
+    $this.$regions = cbgu_Array__init_();
 },
 cbggg_TextureAtlas__init_8 = () => {
     let var_0 = new cbggg_TextureAtlas();
@@ -23654,7 +23649,7 @@ cbggg_TextureAtlas__init_6 = (var_0, var_1, var_2) => {
 cbggg_TextureAtlas__init_0 = ($this, $data) => {
     jl_Object__init_($this);
     $this.$textures0 = cbgu_ObjectSet__init_2(4);
-    $this.$regions0 = cbgu_Array__init_();
+    $this.$regions = cbgu_Array__init_();
     $this.$load5($data);
 },
 cbggg_TextureAtlas__init_4 = var_0 => {
@@ -23674,7 +23669,7 @@ cbggg_TextureAtlas_load = ($this, $data) => {
         $page.$texture2.$setWrap($page.$uWrap1, $page.$vWrap1);
         $this.$textures0.$add($page.$texture2);
     }
-    $this.$regions0.$ensureCapacity0($data.$regions1.$size0);
+    $this.$regions.$ensureCapacity0($data.$regions1.$size0);
     var$2 = $data.$regions1.$iterator();
     while (var$2.$hasNext()) {
         $region = var$2.$next();
@@ -23696,19 +23691,19 @@ cbggg_TextureAtlas_load = ($this, $data) => {
         $atlasRegion.$values24 = $region.$values26;
         if ($region.$flip6)
             $atlasRegion.$flip(0, 1);
-        $this.$regions0.$add2($atlasRegion);
+        $this.$regions.$add2($atlasRegion);
     }
 },
 cbggg_TextureAtlas_getRegions = $this => {
-    return $this.$regions0;
+    return $this.$regions;
 },
 cbggg_TextureAtlas_findRegion = ($this, $name) => {
     let $i, $n;
     $i = 0;
-    $n = $this.$regions0.$size0;
+    $n = $this.$regions.$size0;
     while ($i < $n) {
-        if (($this.$regions0.$get($i)).$name3.$equals($name))
-            return $this.$regions0.$get($i);
+        if (($this.$regions.$get($i)).$name3.$equals($name))
+            return $this.$regions.$get($i);
         $i = $i + 1 | 0;
     }
     return null;
@@ -23716,10 +23711,10 @@ cbggg_TextureAtlas_findRegion = ($this, $name) => {
 cbggg_TextureAtlas_createSprite = ($this, $name) => {
     let $i, $n;
     $i = 0;
-    $n = $this.$regions0.$size0;
+    $n = $this.$regions.$size0;
     while ($i < $n) {
-        if (($this.$regions0.$get($i)).$name3.$equals($name))
-            return cbggg_TextureAtlas_newSprite($this, $this.$regions0.$get($i));
+        if (($this.$regions.$get($i)).$name3.$equals($name))
+            return cbggg_TextureAtlas_newSprite($this, $this.$regions.$get($i));
         $i = $i + 1 | 0;
     }
     return null;
@@ -31258,17 +31253,14 @@ let S_Hud__init_0 = ($this, $game) => {
     $this.$platformLabel = var$2;
     $this.$table0.$top();
     $this.$table0.$setFillParent(1);
-    ((($this.$table0.$add9($this.$fpsLabel)).$expandX()).$padTop(5.0)).$left();
+    (($this.$table0.$add9($this.$fpsLabel)).$expandX()).$left();
+    (($this.$table0.$add9($this.$osLabel)).$expandX()).$right();
     $this.$table0.$row();
-    ((($this.$table0.$add9($this.$skinID)).$expandX()).$padTop(5.0)).$left();
+    (($this.$table0.$add9($this.$skinID)).$expandX()).$left();
+    (($this.$table0.$add9($this.$clockLabel)).$expandX()).$right();
     $this.$table0.$row();
-    ((($this.$table0.$add9($this.$scoreText)).$expandX()).$padTop(5.0)).$left();
-    $this.$table0.$row();
-    ((($this.$table0.$add9($this.$clockLabel)).$expandX()).$padTop(5.0)).$left();
-    $this.$table0.$row();
-    ((($this.$table0.$add9($this.$osLabel)).$expandX()).$padTop(5.0)).$left();
-    $this.$table0.$row();
-    ((($this.$table0.$add9($this.$platformLabel)).$expandX()).$padTop(5.0)).$left();
+    (($this.$table0.$add9($this.$scoreText)).$expandX()).$left();
+    (($this.$table0.$add9($this.$platformLabel)).$expandX()).$right();
 },
 S_Hud__init_ = var_0 => {
     let var_1 = new S_Hud();
@@ -35066,7 +35058,7 @@ function cbgssu_VerticalGroup() {
     a.$space1 = 0.0;
     a.$wrapSpace = 0.0;
     a.$fill9 = 0.0;
-    a.$padTop3 = 0.0;
+    a.$padTop2 = 0.0;
     a.$padLeft5 = 0.0;
     a.$padBottom3 = 0.0;
     a.$padRight3 = 0.0;
@@ -35097,7 +35089,7 @@ cbgssu_VerticalGroup_computeSize = $this => {
         $n = $children.$size0;
         $this.$prefWidth0 = 0.0;
         if (!$this.$wrap13) {
-            $this.$prefHeight = $this.$padTop3 + $this.$padBottom3 + $this.$space1 * ($n - 1 | 0);
+            $this.$prefHeight = $this.$padTop2 + $this.$padBottom3 + $this.$space1 * ($n - 1 | 0);
             $i = 0;
             while (true) {
                 if ($i >= $n)
@@ -35122,7 +35114,7 @@ cbgssu_VerticalGroup_computeSize = $this => {
         $columnSizes = $this.$columnSizes;
         $space = $this.$space1;
         $wrapSpace = $this.$wrapSpace;
-        $pad = $this.$padTop3 + $this.$padBottom3;
+        $pad = $this.$padTop2 + $this.$padBottom3;
         $groupHeight = $this.$getHeight() - $pad;
         $x = 0.0;
         $y = 0.0;
@@ -35193,7 +35185,7 @@ cbgssu_VerticalGroup_layout = $this => {
     $startX = $this.$padLeft5;
     $fill = $this.$fill9;
     $columnWidth = (!$this.$expand1 ? $this.$prefWidth0 : $this.$getWidth()) - $startX - $this.$padRight3;
-    $y = $this.$prefHeight - $this.$padTop3 + $space;
+    $y = $this.$prefHeight - $this.$padTop2 + $space;
     if ($align & 2)
         $y = $y + $this.$getHeight() - $this.$prefHeight;
     else if (!($align & 4))
@@ -35255,9 +35247,9 @@ cbgssu_VerticalGroup_layoutWrapped = $this => {
     $padLeft = $this.$padLeft5;
     $fill = $this.$fill9;
     $wrapSpace = $this.$wrapSpace;
-    $maxHeight = $this.$prefHeight - $this.$padTop3 - $this.$padBottom3;
+    $maxHeight = $this.$prefHeight - $this.$padTop2 - $this.$padBottom3;
     $groupHeight = $this.$getHeight();
-    $yStart = $this.$prefHeight - $this.$padTop3 + $space;
+    $yStart = $this.$prefHeight - $this.$padTop2 + $space;
     $y = 0.0;
     $columnWidth = 0.0;
     if ($align & 16)
@@ -35268,7 +35260,7 @@ cbgssu_VerticalGroup_layoutWrapped = $this => {
         $yStart = $yStart + $groupHeight - $this.$prefHeight;
     else if (!($align & 4))
         $yStart = $yStart + ($groupHeight - $this.$prefHeight) / 2.0;
-    var$13 = $groupHeight - $this.$padTop3;
+    var$13 = $groupHeight - $this.$padTop2;
     var$14 = $this.$columnAlign;
     $columnSizes = $this.$columnSizes;
     $children = $this.$getChildren();
@@ -35351,7 +35343,7 @@ cbgssu_VerticalGroup_drawDebugBounds = ($this, $shapes) => {
     var$4 = $this.$getOriginX();
     var$5 = $this.$getOriginY();
     var$6 = $this.$getWidth() - $this.$padLeft5 - $this.$padRight3;
-    var$7 = $this.$getHeight() - $this.$padBottom3 - $this.$padTop3;
+    var$7 = $this.$getHeight() - $this.$padBottom3 - $this.$padTop2;
     var$8 = $this.$getScaleX();
     var$9 = $this.$getScaleY();
     var$10 = $this.$getRotation();
@@ -36509,7 +36501,7 @@ cbgu_ArrayMap_entries = $this => {
 function cbggg_BitmapFont() {
     let a = this; jl_Object.call(a);
     a.$data1 = null;
-    a.$regions = null;
+    a.$regions0 = null;
     a.$cache0 = null;
     a.$flipped0 = 0;
     a.$integer0 = 0;
@@ -36595,17 +36587,17 @@ cbggg_BitmapFont__init_4 = ($this, $data, $pageRegions, $integer) => {
     $this.$data1 = $data;
     $this.$integer0 = $integer;
     if ($pageRegions !== null && $pageRegions.$size0) {
-        $this.$regions = $pageRegions;
+        $this.$regions0 = $pageRegions;
         $this.$ownsTexture = 0;
     } else {
         if ($data.$imagePaths === null)
             $rt_throw(jl_IllegalArgumentException__init_($rt_s(1017)));
         $n = $data.$imagePaths.data.length;
-        $this.$regions = cbgu_Array__init_0($n);
+        $this.$regions0 = cbgu_Array__init_0($n);
         $i = 0;
         while ($i < $n) {
             $file = $data.$fontFile === null ? cbg_Gdx_files.$internal($data.$imagePaths.data[$i]) : cbg_Gdx_files.$getFileHandle($data.$imagePaths.data[$i], $data.$fontFile.$type());
-            $this.$regions.$add2(cbggg_TextureRegion__init_1(cbgg_Texture__init_2($file, 0)));
+            $this.$regions0.$add2(cbggg_TextureRegion__init_1(cbgg_Texture__init_2($file, 0)));
             $i = $i + 1 | 0;
         }
         $this.$ownsTexture = 1;
@@ -36635,7 +36627,7 @@ cbggg_BitmapFont_load = ($this, $data) => {
                         break a;
                     $glyph = var$6[var$8];
                     if ($glyph !== null)
-                        $data.$setGlyphRegion($glyph, $this.$regions.$get($glyph.$page));
+                        $data.$setGlyphRegion($glyph, $this.$regions0.$get($glyph.$page));
                     var$8 = var$8 + 1 | 0;
                 }
             }
@@ -36643,7 +36635,7 @@ cbggg_BitmapFont_load = ($this, $data) => {
         var$4 = var$4 + 1 | 0;
     }
     if ($data.$missingGlyph !== null)
-        $data.$setGlyphRegion($data.$missingGlyph, $this.$regions.$get($data.$missingGlyph.$page));
+        $data.$setGlyphRegion($data.$missingGlyph, $this.$regions0.$get($data.$missingGlyph.$page));
 },
 cbggg_BitmapFont_draw = ($this, $batch, $str, $x, $y) => {
     let $layout;
@@ -36678,11 +36670,8 @@ cbggg_BitmapFont_getScaleX = $this => {
 cbggg_BitmapFont_getScaleY = $this => {
     return $this.$data1.$scaleY1;
 },
-cbggg_BitmapFont_getRegion = $this => {
-    return $this.$regions.$first();
-},
 cbggg_BitmapFont_getRegions = $this => {
-    return $this.$regions;
+    return $this.$regions0;
 },
 cbggg_BitmapFont_getLineHeight = $this => {
     return $this.$data1.$lineHeight;
@@ -36702,9 +36691,9 @@ cbggg_BitmapFont_dispose = $this => {
         if ($this.$ownsTexture) {
             $i = 0;
             while (true) {
-                if ($i >= $this.$regions.$size0)
+                if ($i >= $this.$regions0.$size0)
                     break a;
-                (($this.$regions.$get($i)).$getTexture()).$dispose();
+                (($this.$regions0.$get($i)).$getTexture()).$dispose();
                 $i = $i + 1 | 0;
             }
         }
@@ -38346,7 +38335,7 @@ cbggg_BitmapFontCache__init_ = ($this, $font, $integer) => {
     $this.$color13 = cbgg_Color__init_(1.0, 1.0, 1.0, 1.0);
     $this.$font2 = $font;
     $this.$integer = $integer;
-    $pageCount = $font.$regions.$size0;
+    $pageCount = $font.$regions0.$size0;
     if (!$pageCount)
         $rt_throw(jl_IllegalArgumentException__init_($rt_s(1027)));
     a: {
@@ -38564,8 +38553,8 @@ cbggg_BitmapFontCache_addToCache = ($this, $layout, $x, $y) => {
     $runCount = $layout.$runs.$size0;
     if (!$runCount)
         return;
-    if ($this.$pageVertices.data.length < $this.$font2.$regions.$size0)
-        cbggg_BitmapFontCache_setPageCount($this, $this.$font2.$regions.$size0);
+    if ($this.$pageVertices.data.length < $this.$font2.$regions0.$size0)
+        cbggg_BitmapFontCache_setPageCount($this, $this.$font2.$regions0.$size0);
     $this.$layouts.$add2($layout);
     cbggg_BitmapFontCache_requireGlyphs($this, $layout);
     $colors = $layout.$colors;
@@ -47311,7 +47300,7 @@ function cbggg_BitmapFont$BitmapFontData() {
     a.$imagePaths = null;
     a.$fontFile = null;
     a.$flipped = 0;
-    a.$padTop6 = 0.0;
+    a.$padTop5 = 0.0;
     a.$padRight5 = 0.0;
     a.$padBottom6 = 0.0;
     a.$padLeft1 = 0.0;
@@ -47369,11 +47358,11 @@ cbggg_BitmapFont$BitmapFontData_load = ($this, $fontFile, $flip) => {
                 var$7 = $padding.data;
                 if (var$7.length != 4)
                     $rt_throw(cbgu_GdxRuntimeException__init_($rt_s(1177)));
-                $this.$padTop6 = jl_Integer_parseInt(var$7[0]);
+                $this.$padTop5 = jl_Integer_parseInt(var$7[0]);
                 $this.$padRight5 = jl_Integer_parseInt(var$7[1]);
                 $this.$padBottom6 = jl_Integer_parseInt(var$7[2]);
                 $this.$padLeft1 = jl_Integer_parseInt(var$7[3]);
-                $padY = $this.$padTop6 + $this.$padBottom6;
+                $padY = $this.$padTop5 + $this.$padBottom6;
                 var$5 = $reader.$readLine();
                 if (var$5 === null)
                     $rt_throw(cbgu_GdxRuntimeException__init_($rt_s(1178)));
@@ -47930,7 +47919,7 @@ cbggg_BitmapFont$BitmapFontData_setScale = ($this, $scaleX, $scaleY) => {
     $this.$down0 = $this.$down0 * $y;
     $this.$padLeft1 = $this.$padLeft1 * $x;
     $this.$padRight5 = $this.$padRight5 * $x;
-    $this.$padTop6 = $this.$padTop6 * $y;
+    $this.$padTop5 = $this.$padTop5 * $y;
     $this.$padBottom6 = $this.$padBottom6 * $y;
     $this.$scaleX1 = $scaleX;
     $this.$scaleY1 = $scaleY;
@@ -48273,7 +48262,7 @@ function cbgssu_DragScrollListener() {
     a.$tickSecs = 0.0;
     a.$startTime = Long_ZERO;
     a.$rampTime = Long_ZERO;
-    a.$padTop7 = 0.0;
+    a.$padTop6 = 0.0;
     a.$padBottom7 = 0.0;
 }
 let cbgssu_DragScrollListener_tmpCoords = null,
@@ -48332,7 +48321,7 @@ cbgssu_DragScrollListener_dragStop = ($this, $event, $x, $y, $pointer) => {
     $this.$scrollDown.$cancel();
 },
 cbgssu_DragScrollListener_isAbove = ($this, $y) => {
-    return !($y >= $this.$scroll0.$getHeight() - $this.$padTop7) ? 0 : 1;
+    return !($y >= $this.$scroll0.$getHeight() - $this.$padTop6) ? 0 : 1;
 },
 cbgssu_DragScrollListener_isBelow = ($this, $y) => {
     return !($y < $this.$padBottom7) ? 0 : 1;
@@ -49338,7 +49327,7 @@ function cbgssu_HorizontalGroup() {
     a.$space2 = 0.0;
     a.$wrapSpace0 = 0.0;
     a.$fill10 = 0.0;
-    a.$padTop5 = 0.0;
+    a.$padTop4 = 0.0;
     a.$padLeft3 = 0.0;
     a.$padBottom5 = 0.0;
     a.$padRight4 = 0.0;
@@ -49445,7 +49434,7 @@ cbgssu_HorizontalGroup_computeSize = $this => {
             $y = $y + $wrapSpace;
         $this.$prefHeight0 = jl_Math_max($this.$prefHeight0, $y + $rowHeight);
     }
-    $this.$prefHeight0 = $this.$prefHeight0 + $this.$padTop5 + $this.$padBottom5;
+    $this.$prefHeight0 = $this.$prefHeight0 + $this.$padTop4 + $this.$padBottom5;
     if ($this.$round2) {
         $this.$prefWidth = jl_Math_ceil($this.$prefWidth);
         $this.$prefHeight0 = jl_Math_ceil($this.$prefHeight0);
@@ -49465,14 +49454,14 @@ cbgssu_HorizontalGroup_layout = $this => {
     $startY = $this.$padBottom5;
     $fill = $this.$fill10;
     var$6 = !$this.$expand0 ? $this.$prefHeight0 : $this.$getHeight();
-    $rowHeight = var$6 - $this.$padTop5 - $startY;
+    $rowHeight = var$6 - $this.$padTop4 - $startY;
     $x = $this.$padLeft3;
     if ($align & 16)
         $x = $x + $this.$getWidth() - $this.$prefWidth;
     else if (!($align & 8))
         $x = $x + ($this.$getWidth() - $this.$prefWidth) / 2.0;
     if (!($align & 4))
-        $startY = $align & 2 ? $this.$getHeight() - $this.$padTop5 - $rowHeight : $startY + ($this.$getHeight() - $startY - $this.$padTop5 - $rowHeight) / 2.0;
+        $startY = $align & 2 ? $this.$getHeight() - $this.$padTop4 - $rowHeight : $startY + ($this.$getHeight() - $startY - $this.$padTop4 - $rowHeight) / 2.0;
     var$9 = $this.$rowAlign;
     $children = $this.$getChildren();
     $i = 0;
@@ -49528,7 +49517,7 @@ cbgssu_HorizontalGroup_layoutWrapped = $this => {
     $fill = $this.$fill10;
     $wrapSpace = $this.$wrapSpace0;
     $maxWidth = $this.$prefWidth - $this.$padLeft3 - $this.$padRight4;
-    $rowY = $prefHeight - $this.$padTop5;
+    $rowY = $prefHeight - $this.$padTop4;
     $groupWidth = $this.$getWidth();
     $xStart = $this.$padLeft3;
     $x = 0.0;
@@ -49628,7 +49617,7 @@ cbgssu_HorizontalGroup_drawDebugBounds = ($this, $shapes) => {
     var$4 = $this.$getOriginX();
     var$5 = $this.$getOriginY();
     var$6 = $this.$getWidth() - $this.$padLeft3 - $this.$padRight4;
-    var$7 = $this.$getHeight() - $this.$padBottom5 - $this.$padTop5;
+    var$7 = $this.$getHeight() - $this.$padBottom5 - $this.$padTop4;
     var$8 = $this.$getScaleX();
     var$9 = $this.$getScaleY();
     var$10 = $this.$getRotation();
@@ -50735,7 +50724,7 @@ cbgssu_Skin_get = ($this, $name, $type) => {
     if ($type === $rt_cls(cbgssu_Drawable))
         return $this.$getDrawable0($name);
     if ($type === $rt_cls(cbggg_TextureRegion))
-        return $this.$getRegion0($name);
+        return $this.$getRegion($name);
     if ($type === $rt_cls(cbggg_NinePatch))
         return $this.$getPatch($name);
     if ($type === $rt_cls(cbggg_Sprite))
@@ -50798,7 +50787,7 @@ cbgssu_Skin_getPatch = ($this, $name) => {
         return $patch;
     a: {
         try {
-            $region = $this.$getRegion0($name);
+            $region = $this.$getRegion($name);
             if ($region instanceof cbggg_TextureAtlas$AtlasRegion) {
                 var$4 = $region;
                 $splits = var$4.$findValue($rt_s(1316));
@@ -50836,7 +50825,7 @@ cbgssu_Skin_getSprite = ($this, $name) => {
         return $sprite;
     a: {
         try {
-            $textureRegion = $this.$getRegion0($name);
+            $textureRegion = $this.$getRegion($name);
             if ($textureRegion instanceof cbggg_TextureAtlas$AtlasRegion) {
                 $region = $textureRegion;
                 if (!(!$region.$rotate0 && $region.$packedWidth == $region.$originalWidth && $region.$packedHeight == $region.$originalHeight))
@@ -50868,7 +50857,7 @@ cbgssu_Skin_getDrawable = ($this, $name) => {
         try {
             b: {
                 var$3 = $drawable;
-                $textureRegion = $this.$getRegion0($name);
+                $textureRegion = $this.$getRegion($name);
                 if ($textureRegion instanceof cbggg_TextureAtlas$AtlasRegion) {
                     var$3 = $drawable;
                     $region = $textureRegion;
@@ -79199,7 +79188,7 @@ cbgssu_TiledDrawable_draw1 = ($this, $batch, $x, $y, $width, $height) => {
     let $oldColor;
     $oldColor = $batch.$getPackedColor();
     $batch.$setColor(($batch.$getColor()).$mul($this.$color5));
-    cbgssu_TiledDrawable_draw0($batch, $this.$getRegion(), $x, $y, $width, $height, $this.$scale6, $this.$align4);
+    cbgssu_TiledDrawable_draw0($batch, $this.$getRegion0(), $x, $y, $width, $height, $this.$scale6, $this.$align4);
     $batch.$setPackedColor($oldColor);
 },
 cbgssu_TiledDrawable_draw0 = ($batch, $textureRegion, $x, $y, $width, $height, $scale, $align) => {
@@ -90135,7 +90124,7 @@ function cbgssu_Cell() {
     a.$spaceLeft = null;
     a.$spaceBottom = null;
     a.$spaceRight = null;
-    a.$padTop2 = null;
+    a.$padTop1 = null;
     a.$padLeft2 = null;
     a.$padBottom1 = null;
     a.$padRight1 = null;
@@ -90240,10 +90229,6 @@ cbgssu_Cell_space = ($this, $space) => {
     }
     $rt_throw(jl_IllegalArgumentException__init_((((jl_StringBuilder__init_()).$append2($rt_s(1977))).$append17($space)).$toString()));
 },
-cbgssu_Cell_padTop = ($this, $padTop) => {
-    $this.$padTop2 = cbgssu_Value$Fixed_valueOf($padTop);
-    return $this;
-},
 cbgssu_Cell_padBottom = ($this, $padBottom) => {
     $this.$padBottom1 = cbgssu_Value$Fixed_valueOf($padBottom);
     return $this;
@@ -90259,6 +90244,14 @@ cbgssu_Cell_left = $this => {
         $this.$align0 = cbgssu_Cell_lefti;
     } else
         $this.$align0 = jl_Integer_valueOf(($this.$align0.$intValue() | 8) & (-17));
+    return $this;
+},
+cbgssu_Cell_right = $this => {
+    if ($this.$align0 === null) {
+        cbgssu_Cell_$callClinit();
+        $this.$align0 = cbgssu_Cell_righti;
+    } else
+        $this.$align0 = jl_Integer_valueOf(($this.$align0.$intValue() | 16) & (-9));
     return $this;
 },
 cbgssu_Cell_grow = $this => {
@@ -90294,7 +90287,7 @@ cbgssu_Cell_clear = $this => {
     $this.$spaceLeft = null;
     $this.$spaceBottom = null;
     $this.$spaceRight = null;
-    $this.$padTop2 = null;
+    $this.$padTop1 = null;
     $this.$padLeft2 = null;
     $this.$padBottom1 = null;
     $this.$padRight1 = null;
@@ -90325,7 +90318,7 @@ cbgssu_Cell_set = ($this, $cell) => {
     $this.$spaceLeft = $cell.$spaceLeft;
     $this.$spaceBottom = $cell.$spaceBottom;
     $this.$spaceRight = $cell.$spaceRight;
-    $this.$padTop2 = $cell.$padTop2;
+    $this.$padTop1 = $cell.$padTop1;
     $this.$padLeft2 = $cell.$padLeft2;
     $this.$padBottom1 = $cell.$padBottom1;
     $this.$padRight1 = $cell.$padRight1;
@@ -90361,8 +90354,8 @@ cbgssu_Cell_merge = ($this, $cell) => {
         $this.$spaceBottom = $cell.$spaceBottom;
     if ($cell.$spaceRight !== null)
         $this.$spaceRight = $cell.$spaceRight;
-    if ($cell.$padTop2 !== null)
-        $this.$padTop2 = $cell.$padTop2;
+    if ($cell.$padTop1 !== null)
+        $this.$padTop1 = $cell.$padTop1;
     if ($cell.$padLeft2 !== null)
         $this.$padLeft2 = $cell.$padLeft2;
     if ($cell.$padBottom1 !== null)
@@ -90407,7 +90400,7 @@ cbgssu_Cell_defaults0 = () => {
         cbgssu_Cell_defaults.$spaceLeft = cbgssu_Value_zero;
         cbgssu_Cell_defaults.$spaceBottom = cbgssu_Value_zero;
         cbgssu_Cell_defaults.$spaceRight = cbgssu_Value_zero;
-        cbgssu_Cell_defaults.$padTop2 = cbgssu_Value_zero;
+        cbgssu_Cell_defaults.$padTop1 = cbgssu_Value_zero;
         cbgssu_Cell_defaults.$padLeft2 = cbgssu_Value_zero;
         cbgssu_Cell_defaults.$padBottom1 = cbgssu_Value_zero;
         cbgssu_Cell_defaults.$padRight1 = cbgssu_Value_zero;
@@ -95417,7 +95410,7 @@ ju_ArrayDeque, 0, ju_AbstractCollection, [ju_Deque, jl_Cloneable, ji_Serializabl
 "$isEmpty", $rt_wrapFunction0(ju_ArrayDeque_isEmpty)],
 cbgssa_DelayAction, "DelayAction", 28, cbgssa_DelegateAction, [cbgssa_FinishableAction], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbgssa_DelayAction__init_), "$_init_11", $rt_wrapFunction1(cbgssa_DelayAction__init_0), "$delegate", $rt_wrapFunction1(cbgssa_DelayAction_delegate), "$restart", $rt_wrapFunction0(cbgssa_DelayAction_restart)],
 cbgssu_TextureRegionDrawable, "TextureRegionDrawable", 27, cbgssu_BaseDrawable, [cbgssu_TransformDrawable], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbgssu_TextureRegionDrawable__init_0), "$_init_145", $rt_wrapFunction1(cbgssu_TextureRegionDrawable__init_2), "$_init_129", $rt_wrapFunction1(cbgssu_TextureRegionDrawable__init_), "$_init_357", $rt_wrapFunction1(cbgssu_TextureRegionDrawable__init_1), "$draw0", function(var_1, var_2, var_3, var_4, var_5) { cbgssu_TextureRegionDrawable_draw0(this, var_1, var_2,
-var_3, var_4, var_5); }, "$draw10", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10) { cbgssu_TextureRegionDrawable_draw(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10); }, "$setRegion", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_setRegion), "$getRegion", $rt_wrapFunction0(cbgssu_TextureRegionDrawable_getRegion), "$tint", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_tint)],
+var_3, var_4, var_5); }, "$draw10", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10) { cbgssu_TextureRegionDrawable_draw(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10); }, "$setRegion", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_setRegion), "$getRegion0", $rt_wrapFunction0(cbgssu_TextureRegionDrawable_getRegion), "$tint", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_tint)],
 ju_HashMap$AbstractMapIterator, 0, jl_Object, [], 0, 0, 0, ["$_init_53", $rt_wrapFunction1(ju_HashMap$AbstractMapIterator__init_), "$hasNext", $rt_wrapFunction0(ju_HashMap$AbstractMapIterator_hasNext), "$checkConcurrentMod", $rt_wrapFunction0(ju_HashMap$AbstractMapIterator_checkConcurrentMod), "$makeNext", $rt_wrapFunction0(ju_HashMap$AbstractMapIterator_makeNext)],
 jt_DecimalFormatSymbols, 0, jl_Object, [jl_Cloneable], 1, 0, 0, ["$_init_0", $rt_wrapFunction0(jt_DecimalFormatSymbols__init_1), "$_init_136", $rt_wrapFunction1(jt_DecimalFormatSymbols__init_0), "$getZeroDigit", $rt_wrapFunction0(jt_DecimalFormatSymbols_getZeroDigit), "$getGroupingSeparator", $rt_wrapFunction0(jt_DecimalFormatSymbols_getGroupingSeparator), "$getPerMill", $rt_wrapFunction0(jt_DecimalFormatSymbols_getPerMill), "$getPercent", $rt_wrapFunction0(jt_DecimalFormatSymbols_getPercent), "$getLocale",
 $rt_wrapFunction0(jt_DecimalFormatSymbols_getLocale), "$getDecimalSeparator", $rt_wrapFunction0(jt_DecimalFormatSymbols_getDecimalSeparator), "$getNaN", $rt_wrapFunction0(jt_DecimalFormatSymbols_getNaN), "$getInfinity", $rt_wrapFunction0(jt_DecimalFormatSymbols_getInfinity), "$getMinusSign", $rt_wrapFunction0(jt_DecimalFormatSymbols_getMinusSign), "$getExponentSeparator", $rt_wrapFunction0(jt_DecimalFormatSymbols_getExponentSeparator), "$clone0", $rt_wrapFunction0(jt_DecimalFormatSymbols_clone)],
@@ -95553,8 +95546,8 @@ cbgu_ArrayMap, "ArrayMap", 20, jl_Object, [jl_Iterable], 1, [0,0,0], 0, ["$_init
 "$resize1", $rt_wrapFunction1(cbgu_ArrayMap_resize), "$hashCode0", $rt_wrapFunction0(cbgu_ArrayMap_hashCode), "$equals", $rt_wrapFunction1(cbgu_ArrayMap_equals), "$toString", $rt_wrapFunction0(cbgu_ArrayMap_toString), "$entries0", $rt_wrapFunction0(cbgu_ArrayMap_entries)],
 cbggg_BitmapFont, "BitmapFont", 33, jl_Object, [cbgu_Disposable], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbggg_BitmapFont__init_2), "$_init_308", $rt_wrapFunction2(cbggg_BitmapFont__init_6), "$_init_194", $rt_wrapFunction3(cbggg_BitmapFont__init_1), "$_init_132", $rt_wrapFunction1(cbggg_BitmapFont__init_9), "$_init_196", $rt_wrapFunction2(cbggg_BitmapFont__init_3), "$_init_126", $rt_wrapFunction3(cbggg_BitmapFont__init_7), "$_init_193", $rt_wrapFunction4(cbggg_BitmapFont__init_0), "$_init_195", $rt_wrapFunction3(cbggg_BitmapFont__init_),
 "$_init_197", $rt_wrapFunction3(cbggg_BitmapFont__init_4), "$load7", $rt_wrapFunction1(cbggg_BitmapFont_load), "$draw6", $rt_wrapFunction4(cbggg_BitmapFont_draw), "$draw4", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9) { return cbggg_BitmapFont_draw1(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9); }, "$draw5", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10) { return cbggg_BitmapFont_draw0(this, var_1, var_2, var_3, var_4, var_5,
-var_6, var_7, var_8, var_9, var_10); }, "$getColor", $rt_wrapFunction0(cbggg_BitmapFont_getColor), "$setColor0", $rt_wrapFunction4(cbggg_BitmapFont_setColor), "$getScaleX", $rt_wrapFunction0(cbggg_BitmapFont_getScaleX), "$getScaleY", $rt_wrapFunction0(cbggg_BitmapFont_getScaleY), "$getRegion", $rt_wrapFunction0(cbggg_BitmapFont_getRegion), "$getRegions", $rt_wrapFunction0(cbggg_BitmapFont_getRegions), "$getLineHeight", $rt_wrapFunction0(cbggg_BitmapFont_getLineHeight), "$getCapHeight", $rt_wrapFunction0(cbggg_BitmapFont_getCapHeight),
-"$getDescent", $rt_wrapFunction0(cbggg_BitmapFont_getDescent), "$isFlipped", $rt_wrapFunction0(cbggg_BitmapFont_isFlipped), "$dispose", $rt_wrapFunction0(cbggg_BitmapFont_dispose), "$setUseIntegerPositions", $rt_wrapFunction1(cbggg_BitmapFont_setUseIntegerPositions), "$usesIntegerPositions", $rt_wrapFunction0(cbggg_BitmapFont_usesIntegerPositions), "$getData", $rt_wrapFunction0(cbggg_BitmapFont_getData), "$newFontCache", $rt_wrapFunction0(cbggg_BitmapFont_newFontCache), "$toString", $rt_wrapFunction0(cbggg_BitmapFont_toString)],
+var_6, var_7, var_8, var_9, var_10); }, "$getColor", $rt_wrapFunction0(cbggg_BitmapFont_getColor), "$setColor0", $rt_wrapFunction4(cbggg_BitmapFont_setColor), "$getScaleX", $rt_wrapFunction0(cbggg_BitmapFont_getScaleX), "$getScaleY", $rt_wrapFunction0(cbggg_BitmapFont_getScaleY), "$getRegions", $rt_wrapFunction0(cbggg_BitmapFont_getRegions), "$getLineHeight", $rt_wrapFunction0(cbggg_BitmapFont_getLineHeight), "$getCapHeight", $rt_wrapFunction0(cbggg_BitmapFont_getCapHeight), "$getDescent", $rt_wrapFunction0(cbggg_BitmapFont_getDescent),
+"$isFlipped", $rt_wrapFunction0(cbggg_BitmapFont_isFlipped), "$dispose", $rt_wrapFunction0(cbggg_BitmapFont_dispose), "$setUseIntegerPositions", $rt_wrapFunction1(cbggg_BitmapFont_setUseIntegerPositions), "$usesIntegerPositions", $rt_wrapFunction0(cbggg_BitmapFont_usesIntegerPositions), "$getData", $rt_wrapFunction0(cbggg_BitmapFont_getData), "$newFontCache", $rt_wrapFunction0(cbggg_BitmapFont_newFontCache), "$toString", $rt_wrapFunction0(cbggg_BitmapFont_toString)],
 jur_CIBackReferenceSet, "CIBackReferenceSet", 46, jur_JointSet, [], 0, [0,0,0], 0, ["$_init_63", $rt_wrapFunction2(jur_CIBackReferenceSet__init_), "$matches", $rt_wrapFunction3(jur_CIBackReferenceSet_matches), "$setNext", $rt_wrapFunction1(jur_CIBackReferenceSet_setNext), "$getString", $rt_wrapFunction1(jur_CIBackReferenceSet_getString), "$getName", $rt_wrapFunction0(jur_CIBackReferenceSet_getName), "$hasConsumed", $rt_wrapFunction1(jur_CIBackReferenceSet_hasConsumed)],
 jur_AbstractCharClass$1, "AbstractCharClass$1", 46, jur_AbstractCharClass, [], 0, 0, 0, ["$_init_60", $rt_wrapFunction2(jur_AbstractCharClass$1__init_), "$contains1", $rt_wrapFunction1(jur_AbstractCharClass$1_contains)],
 jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser, "DateTimeFormatterBuilder$WeekFieldsPrinterParser", 54, jl_Object, [jtf_DateTimeFormatterBuilder$DateTimePrinterParser], 16, [jtf_DateTimeFormatterBuilder,jtf_DateTimeFormatterBuilder,0], 0, ["$_init_36", $rt_wrapFunction2(jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser__init_0), "$print0", $rt_wrapFunction2(jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser_print), "$toString", $rt_wrapFunction0(jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser_toString)],
@@ -95832,7 +95825,7 @@ ju_HashMap$1, 0, ju_AbstractSet, [], 0, 0, 0, ["$_init_53", $rt_wrapFunction1(ju
 cbgm_GeometryUtils, 0, jl_Object, [], 17, 0, cbgm_GeometryUtils_$callClinit, 0,
 ju_HashMap$2, 0, ju_AbstractCollection, [], 0, 0, 0, ["$_init_53", $rt_wrapFunction1(ju_HashMap$2__init_), "$size", $rt_wrapFunction0(ju_HashMap$2_size), "$iterator0", $rt_wrapFunction0(ju_HashMap$2_iterator)],
 cbgssu_Skin, "Skin", 26, jl_Object, [cbgu_Disposable], 1, [0,0,0], cbgssu_Skin_$callClinit, ["$_init_0", $rt_wrapFunction0(cbgssu_Skin__init_), "$_init_132", $rt_wrapFunction1(cbgssu_Skin__init_0), "$_init_442", $rt_wrapFunction2(cbgssu_Skin__init_1), "$_init_240", $rt_wrapFunction1(cbgssu_Skin__init_2), "$load8", $rt_wrapFunction1(cbgssu_Skin_load), "$addRegions", $rt_wrapFunction1(cbgssu_Skin_addRegions), "$add13", $rt_wrapFunction2(cbgssu_Skin_add), "$add14", $rt_wrapFunction3(cbgssu_Skin_add0), "$get9",
-$rt_wrapFunction1(cbgssu_Skin_get0), "$get10", $rt_wrapFunction2(cbgssu_Skin_get), "$optional", $rt_wrapFunction2(cbgssu_Skin_optional), "$getRegion0", $rt_wrapFunction1(cbgssu_Skin_getRegion), "$getRegions0", $rt_wrapFunction1(cbgssu_Skin_getRegions), "$getPatch", $rt_wrapFunction1(cbgssu_Skin_getPatch), "$getSprite", $rt_wrapFunction1(cbgssu_Skin_getSprite), "$getDrawable0", $rt_wrapFunction1(cbgssu_Skin_getDrawable), "$newDrawable0", $rt_wrapFunction2(cbgssu_Skin_newDrawable0), "$newDrawable", $rt_wrapFunction2(cbgssu_Skin_newDrawable),
+$rt_wrapFunction1(cbgssu_Skin_get0), "$get10", $rt_wrapFunction2(cbgssu_Skin_get), "$optional", $rt_wrapFunction2(cbgssu_Skin_optional), "$getRegion", $rt_wrapFunction1(cbgssu_Skin_getRegion), "$getRegions0", $rt_wrapFunction1(cbgssu_Skin_getRegions), "$getPatch", $rt_wrapFunction1(cbgssu_Skin_getPatch), "$getSprite", $rt_wrapFunction1(cbgssu_Skin_getSprite), "$getDrawable0", $rt_wrapFunction1(cbgssu_Skin_getDrawable), "$newDrawable0", $rt_wrapFunction2(cbgssu_Skin_newDrawable0), "$newDrawable", $rt_wrapFunction2(cbgssu_Skin_newDrawable),
 "$scale2", $rt_wrapFunction1(cbgssu_Skin_scale), "$dispose", $rt_wrapFunction0(cbgssu_Skin_dispose), "$getJsonLoader", $rt_wrapFunction1(cbgssu_Skin_getJsonLoader)],
 jm_Elementary, 0, jl_Object, [], 0, 0, 0, 0,
 cbgssa_Actions$_clinit_$lambda$_77_6, "Actions$<clinit>$lambda$_77_6", 28, jl_Object, [cbgu_DefaultPool$PoolSupplier], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbgssa_Actions$_clinit_$lambda$_77_6__init_), "$get19", $rt_wrapFunction0(cbgssa_Actions$_clinit_$lambda$_77_6_get0), "$get50", $rt_wrapFunction0(cbgssa_Actions$_clinit_$lambda$_77_6_get)],
@@ -96545,7 +96538,7 @@ cbgssu_Slider$1, "Slider$1", 26, cbgss_InputListener, [], 0, [cbgssu_Slider,0,0]
 var_4, var_5) { cbgssu_Slider$1_enter(this, var_1, var_2, var_3, var_4, var_5); }, "$exit", function(var_1, var_2, var_3, var_4, var_5) { cbgssu_Slider$1_exit(this, var_1, var_2, var_3, var_4, var_5); }],
 otcit_CachedDateTimeZone, "CachedDateTimeZone", 67, otcit_StorableDateTimeZone, [], 17, [0,0,0], otcit_CachedDateTimeZone_$callClinit, ["$getOffset", $rt_wrapFunction1(otcit_CachedDateTimeZone_getOffset), "$getStandardOffset", $rt_wrapFunction1(otcit_CachedDateTimeZone_getStandardOffset), "$asZoneRules", $rt_wrapFunction0(otcit_CachedDateTimeZone_asZoneRules)],
 cbgssu_Cell, "Cell", 26, jl_Object, [cbgu_Pool$Poolable], 1, [0,0,0], cbgssu_Cell_$callClinit, ["$_init_0", $rt_wrapFunction0(cbgssu_Cell__init_), "$setTable", $rt_wrapFunction1(cbgssu_Cell_setTable), "$width2", $rt_wrapFunction1(cbgssu_Cell_width0), "$width1", $rt_wrapFunction1(cbgssu_Cell_width), "$height0", $rt_wrapFunction1(cbgssu_Cell_height0), "$height", $rt_wrapFunction1(cbgssu_Cell_height), "$minWidth", $rt_wrapFunction1(cbgssu_Cell_minWidth), "$space0", $rt_wrapFunction1(cbgssu_Cell_space0), "$space",
-$rt_wrapFunction1(cbgssu_Cell_space), "$padTop", $rt_wrapFunction1(cbgssu_Cell_padTop), "$padBottom", $rt_wrapFunction1(cbgssu_Cell_padBottom), "$fillX", $rt_wrapFunction0(cbgssu_Cell_fillX), "$left", $rt_wrapFunction0(cbgssu_Cell_left), "$grow", $rt_wrapFunction0(cbgssu_Cell_grow), "$growX", $rt_wrapFunction0(cbgssu_Cell_growX), "$expandX", $rt_wrapFunction0(cbgssu_Cell_expandX), "$row0", $rt_wrapFunction0(cbgssu_Cell_row), "$clear", $rt_wrapFunction0(cbgssu_Cell_clear), "$reset", $rt_wrapFunction0(cbgssu_Cell_reset),
+$rt_wrapFunction1(cbgssu_Cell_space), "$padBottom", $rt_wrapFunction1(cbgssu_Cell_padBottom), "$fillX", $rt_wrapFunction0(cbgssu_Cell_fillX), "$left", $rt_wrapFunction0(cbgssu_Cell_left), "$right", $rt_wrapFunction0(cbgssu_Cell_right), "$grow", $rt_wrapFunction0(cbgssu_Cell_grow), "$growX", $rt_wrapFunction0(cbgssu_Cell_growX), "$expandX", $rt_wrapFunction0(cbgssu_Cell_expandX), "$row0", $rt_wrapFunction0(cbgssu_Cell_row), "$clear", $rt_wrapFunction0(cbgssu_Cell_clear), "$reset", $rt_wrapFunction0(cbgssu_Cell_reset),
 "$set3", $rt_wrapFunction1(cbgssu_Cell_set), "$merge", $rt_wrapFunction1(cbgssu_Cell_merge), "$toString", $rt_wrapFunction0(cbgssu_Cell_toString)],
 jur_IntHash, 0, jl_Object, [], 0, 0, 0, 0,
 cgxgtbw_WebApplication$8, 0, jl_Object, [], 32768, 0, cgxgtbw_WebApplication$8_$callClinit, 0]);
@@ -96671,7 +96664,7 @@ $rt_reflection([
             ["rowHeight", 2, $rt_arraycls($rt_floatcls), o => o.$rowHeight, (o, v) => o.$rowHeight = v],
             ["expandWidth", 2, $rt_arraycls($rt_floatcls), o => o.$expandWidth, (o, v) => o.$expandWidth = v],
             ["expandHeight", 2, $rt_arraycls($rt_floatcls), o => o.$expandHeight, (o, v) => o.$expandHeight = v],
-            ["padTop", 0, cbgssu_Value, o => o.$padTop4, (o, v) => o.$padTop4 = v],
+            ["padTop", 0, cbgssu_Value, o => o.$padTop3, (o, v) => o.$padTop3 = v],
             ["padLeft", 0, cbgssu_Value, o => o.$padLeft4, (o, v) => o.$padLeft4 = v],
             ["padBottom", 0, cbgssu_Value, o => o.$padBottom4, (o, v) => o.$padBottom4 = v],
             ["padRight", 0, cbgssu_Value, o => o.$padRight2, (o, v) => o.$padRight2 = v],
@@ -96976,7 +96969,7 @@ $rt_reflection([
             ["prefHeight", 2, cbgssu_Value, o => o.$prefHeight6, (o, v) => o.$prefHeight6 = v],
             ["maxWidth", 2, cbgssu_Value, o => o.$maxWidth2, (o, v) => o.$maxWidth2 = v],
             ["maxHeight", 2, cbgssu_Value, o => o.$maxHeight1, (o, v) => o.$maxHeight1 = v],
-            ["padTop", 2, cbgssu_Value, o => o.$padTop1, (o, v) => o.$padTop1 = v],
+            ["padTop", 2, cbgssu_Value, o => o.$padTop0, (o, v) => o.$padTop0 = v],
             ["padLeft", 2, cbgssu_Value, o => o.$padLeft, (o, v) => o.$padLeft = v],
             ["padBottom", 2, cbgssu_Value, o => o.$padBottom2, (o, v) => o.$padBottom2 = v],
             ["padRight", 2, cbgssu_Value, o => o.$padRight0, (o, v) => o.$padRight0 = v],
@@ -97063,7 +97056,7 @@ $rt_reflection([
             ["top", 1025, cbgssu_Container, 0, o => o.$top3],
             ["left", 1025, cbgssu_Container, 0, o => o.$left4],
             ["bottom", 1025, cbgssu_Container, 0, o => o.$bottom0],
-            ["right", 1025, cbgssu_Container, 0, o => o.$right],
+            ["right", 1025, cbgssu_Container, 0, o => o.$right0],
             ["getMinWidth", 1, $rt_floatcls, 0, o => o.$getMinWidth],
             ["getMinHeightValue", 1025, cbgssu_Value, 0, o => o.$getMinHeightValue],
             ["getMinHeight", 1, $rt_floatcls, 0, o => o.$getMinHeight],
@@ -98017,7 +98010,7 @@ $rt_reflection([
             ["draw", 1, $rt_voidcls, [cbggg_Batch, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls], o => o.$draw0],
             ["draw", 1, $rt_voidcls, [cbggg_Batch, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls], o => o.$draw10],
             ["setRegion", 1, $rt_voidcls, [cbggg_TextureRegion], o => o.$setRegion],
-            ["getRegion", 1, cbggg_TextureRegion, 0, o => o.$getRegion],
+            ["getRegion", 1, cbggg_TextureRegion, 0, o => o.$getRegion0],
             ["tint", 1, cbgssu_Drawable, [cbgg_Color], o => o.$tint]
         ]
     }, 
@@ -98345,7 +98338,7 @@ $rt_reflection([
             ["space", 2, $rt_floatcls, o => o.$space1, (o, v) => o.$space1 = v],
             ["wrapSpace", 2, $rt_floatcls, o => o.$wrapSpace, (o, v) => o.$wrapSpace = v],
             ["fill", 2, $rt_floatcls, o => o.$fill9, (o, v) => o.$fill9 = v],
-            ["padTop", 2, $rt_floatcls, o => o.$padTop3, (o, v) => o.$padTop3 = v],
+            ["padTop", 2, $rt_floatcls, o => o.$padTop2, (o, v) => o.$padTop2 = v],
             ["padLeft", 2, $rt_floatcls, o => o.$padLeft5, (o, v) => o.$padLeft5 = v],
             ["padBottom", 2, $rt_floatcls, o => o.$padBottom3, (o, v) => o.$padBottom3 = v],
             ["padRight", 2, $rt_floatcls, o => o.$padRight3, (o, v) => o.$padRight3 = v]
@@ -98369,7 +98362,7 @@ $rt_reflection([
             ["getWrapSpace", 1025, $rt_floatcls, 0, o => o.$getWrapSpace],
             ["pad", 1025, cbgssu_VerticalGroup, [$rt_floatcls], o => o.$pad9],
             ["pad", 1025, cbgssu_VerticalGroup, [$rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls], o => o.$pad13],
-            ["padTop", 1025, cbgssu_VerticalGroup, [$rt_floatcls], o => o.$padTop8],
+            ["padTop", 1025, cbgssu_VerticalGroup, [$rt_floatcls], o => o.$padTop7],
             ["padLeft", 1025, cbgssu_VerticalGroup, [$rt_floatcls], o => o.$padLeft10],
             ["padBottom", 1025, cbgssu_VerticalGroup, [$rt_floatcls], o => o.$padBottom11],
             ["padRight", 1025, cbgssu_VerticalGroup, [$rt_floatcls], o => o.$padRight10],
@@ -99138,7 +99131,7 @@ $rt_reflection([
             ["tickSecs", 0, $rt_floatcls, o => o.$tickSecs, (o, v) => o.$tickSecs = v],
             ["startTime", 0, $rt_longcls, o => o.$startTime, (o, v) => o.$startTime = v],
             ["rampTime", 0, $rt_longcls, o => o.$rampTime, (o, v) => o.$rampTime = v],
-            ["padTop", 0, $rt_floatcls, o => o.$padTop7, (o, v) => o.$padTop7 = v],
+            ["padTop", 0, $rt_floatcls, o => o.$padTop6, (o, v) => o.$padTop6 = v],
             ["padBottom", 0, $rt_floatcls, o => o.$padBottom7, (o, v) => o.$padBottom7 = v]
         ],
         m: [
@@ -99199,7 +99192,7 @@ $rt_reflection([
             ["space", 2, $rt_floatcls, o => o.$space2, (o, v) => o.$space2 = v],
             ["wrapSpace", 2, $rt_floatcls, o => o.$wrapSpace0, (o, v) => o.$wrapSpace0 = v],
             ["fill", 2, $rt_floatcls, o => o.$fill10, (o, v) => o.$fill10 = v],
-            ["padTop", 2, $rt_floatcls, o => o.$padTop5, (o, v) => o.$padTop5 = v],
+            ["padTop", 2, $rt_floatcls, o => o.$padTop4, (o, v) => o.$padTop4 = v],
             ["padLeft", 2, $rt_floatcls, o => o.$padLeft3, (o, v) => o.$padLeft3 = v],
             ["padBottom", 2, $rt_floatcls, o => o.$padBottom5, (o, v) => o.$padBottom5 = v],
             ["padRight", 2, $rt_floatcls, o => o.$padRight4, (o, v) => o.$padRight4 = v]
@@ -99333,7 +99326,7 @@ $rt_reflection([
             ["getAll", 1025, cbgu_ObjectMap, [jl_Class], o => o.$getAll],
             ["getColor", 1025, cbgg_Color, [jl_String], o => o.$getColor1],
             ["getFont", 1025, cbggg_BitmapFont, [jl_String], o => o.$getFont],
-            ["getRegion", 1, cbggg_TextureRegion, [jl_String], o => o.$getRegion0],
+            ["getRegion", 1, cbggg_TextureRegion, [jl_String], o => o.$getRegion],
             ["getRegions", 1, cbgu_Array, [jl_String], o => o.$getRegions0],
             ["getTiledDrawable", 1025, cbgssu_TiledDrawable, [jl_String], o => o.$getTiledDrawable],
             ["getPatch", 1, cbggg_NinePatch, [jl_String], o => o.$getPatch],
@@ -101981,7 +101974,7 @@ $rt_reflection([
             ["spaceLeft", 0, cbgssu_Value, o => o.$spaceLeft, (o, v) => o.$spaceLeft = v],
             ["spaceBottom", 0, cbgssu_Value, o => o.$spaceBottom, (o, v) => o.$spaceBottom = v],
             ["spaceRight", 0, cbgssu_Value, o => o.$spaceRight, (o, v) => o.$spaceRight = v],
-            ["padTop", 0, cbgssu_Value, o => o.$padTop2, (o, v) => o.$padTop2 = v],
+            ["padTop", 0, cbgssu_Value, o => o.$padTop1, (o, v) => o.$padTop1 = v],
             ["padLeft", 0, cbgssu_Value, o => o.$padLeft2, (o, v) => o.$padLeft2 = v],
             ["padBottom", 0, cbgssu_Value, o => o.$padBottom1, (o, v) => o.$padBottom1 = v],
             ["padRight", 0, cbgssu_Value, o => o.$padRight1, (o, v) => o.$padRight1 = v],
@@ -102067,7 +102060,7 @@ $rt_reflection([
             ["padRight", 1025, cbgssu_Cell, [cbgssu_Value], o => o.$padRight9],
             ["pad", 1025, cbgssu_Cell, [$rt_floatcls], o => o.$pad10],
             ["pad", 1025, cbgssu_Cell, [$rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls], o => o.$pad3],
-            ["padTop", 1, cbgssu_Cell, [$rt_floatcls], o => o.$padTop],
+            ["padTop", 1025, cbgssu_Cell, [$rt_floatcls], o => o.$padTop8],
             ["padLeft", 1025, cbgssu_Cell, [$rt_floatcls], o => o.$padLeft13],
             ["padBottom", 1, cbgssu_Cell, [$rt_floatcls], o => o.$padBottom],
             ["padRight", 1025, cbgssu_Cell, [$rt_floatcls], o => o.$padRight12],
@@ -102082,7 +102075,7 @@ $rt_reflection([
             ["top", 1025, cbgssu_Cell, 0, o => o.$top1],
             ["left", 1, cbgssu_Cell, 0, o => o.$left],
             ["bottom", 1025, cbgssu_Cell, 0, o => o.$bottom3],
-            ["right", 1025, cbgssu_Cell, 0, o => o.$right0],
+            ["right", 1, cbgssu_Cell, 0, o => o.$right],
             ["grow", 1, cbgssu_Cell, 0, o => o.$grow],
             ["growX", 1, cbgssu_Cell, 0, o => o.$growX],
             ["growY", 1025, cbgssu_Cell, 0, o => o.$growY],
