@@ -3,6 +3,7 @@ package com.ponsit.dopong3;
  
 
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
@@ -90,6 +91,10 @@ System.out.println(
    HUD.getStage().act(delta);
    HUD.getStage().draw();
     }
+    public void isWeb() {
+    	if(Gdx.app.getType() == Application.ApplicationType.WebGL) {
+    		Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+    	}}
     public void dispose(){
     	stage.dispose();
     	AssetLoader.unloadMenu();
@@ -115,10 +120,13 @@ System.out.println(
     	quit.addListener(new ClickListener() {
     		@Override
     		public void clicked(InputEvent e, float x, float y) {
-    			if(table.isTouchable()) return;
+    			if(table.getTouchable() == Touchable.disabled) return;
+    			isWeb();
+
+
     			table.setTouchable(Touchable.disabled);
     			fadeOut(() ->{
-					AssetLoader.unloadMenu();
+    				AssetLoader.unloadMenu();
 					AssetLoader.PongLoader.dispose();
         			Gdx.app.exit();
     			});
