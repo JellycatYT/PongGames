@@ -66,7 +66,8 @@ if(!gameStopper) {
     	  stop(delta);
     	
     	    ScreenUtils.clear(0,0,0,1);
-            HUD.update();
+            HUD.debug();
+    	    HUD.update();
     	    game.win.apply();
     	
 game.batch.setProjectionMatrix(game.win.getCamera().combined);

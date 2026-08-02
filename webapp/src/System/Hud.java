@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -11,6 +12,7 @@ import com.ponsit.dopong3.AssetLoader;
 import com.ponsit.dopong3.Main;
 
 public class Hud {
+	boolean debugOn = true;
  Stage stage;
 	String osName = System.getProperty("os.name");
 	Main game;
@@ -24,6 +26,7 @@ Label fpsLabel;
 Label runtimeLabel;
 Label osLabel;
 Label clockLabel;
+Label platformLabel;
 LocalTime clock = LocalTime.now();
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -40,6 +43,7 @@ public Hud(Main game) {
 	this.runtimeLabel = new Label(" ",AssetLoader.skin);
 	this.osLabel = new Label("OS: "+osName, AssetLoader.skin);
 	this.clockLabel = new Label("",  AssetLoader.skin);
+	this.platformLabel = new Label("Platform name"+Gdx.app.getType(),AssetLoader.skin);
 table.top();
 table.setFillParent(true);
 table.add(fpsLabel).expandX().padTop(5).left();
@@ -55,6 +59,8 @@ table.add(clockLabel).expandX().padTop(5).left();
 table.row();
 table.add(osLabel).expandX().padTop(5).left();
 
+table.row();
+table.add(platformLabel).expandX().padTop(5).left();
 }
 	public void update() {
 		fpsLabel.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
@@ -62,9 +68,23 @@ table.add(osLabel).expandX().padTop(5).left();
 		scoreText.setText("Score:" + data.getScore());
 		clockLabel.setText("CLOCK: " + LocalTime.now().format(formatter));
 		osLabel.setText("OS: "+osName);
+		platformLabel.setText("Platform name="+Gdx.app.getType());
+		
 	}
 	public Stage getStage() {
 		return stage;
 	}
-}
+	public void debug() {
+		if((Gdx.input.isKeyJustPressed(Input.Keys.F3))) {
+			if(debugOn) {
+				debugOn = false;
+				stage.getRoot().setVisible(false);
+			}else {
+				stage.getRoot().setVisible(true);			
+				debugOn = true;
+
+			}
+	}
+	}
+	}
 

@@ -103,6 +103,8 @@ System.out.println(
     	quit.addListener(new ClickListener() {
     		@Override
     		public void clicked(InputEvent e, float x, float y) {
+    			if(table.isTouchable()) return;
+    			table.setTouchable(Touchable.disabled);
     			fadeOut(() ->{
 					AssetLoader.unloadMenu();
 
@@ -120,7 +122,6 @@ System.out.println(
     					Actions.fadeOut(1f),
     					Actions.fadeIn(0f),
     					Actions.run(nextAction))
-
     				 
     			);
 
