@@ -19773,6 +19773,7 @@ cpd_AssetLoader_loadDroplet = () => {
     cpd_AssetLoader_DropAtlas = cpd_AssetLoader_PongLoader.$get10($rt_s(549), $rt_cls(cbggg_TextureAtlas));
 },
 cpd_AssetLoader_loadHUD = () => {
+    let var$1;
     cpd_AssetLoader_$callClinit();
     cpd_AssetLoader_PongLoader.$load3($rt_s(550), $rt_cls(cbggg_BitmapFont));
     cpd_AssetLoader_PongLoader.$load3($rt_s(551), $rt_cls(cbggg_BitmapFont));
@@ -19781,6 +19782,10 @@ cpd_AssetLoader_loadHUD = () => {
     cpd_AssetLoader_gameFont = cpd_AssetLoader_PongLoader.$get14($rt_s(550));
     cpd_AssetLoader_infoFont = cpd_AssetLoader_PongLoader.$get14($rt_s(551));
     cpd_AssetLoader_skin = cpd_AssetLoader_PongLoader.$get10($rt_s(541), $rt_cls(cbgssu_Skin));
+    var$1 = (cpd_AssetLoader_gameFont.$getRegion()).$getTexture();
+    cbgg_Texture$TextureFilter_$callClinit();
+    var$1.$setFilter(cbgg_Texture$TextureFilter_Nearest, cbgg_Texture$TextureFilter_Nearest);
+    ((cpd_AssetLoader_infoFont.$getRegion()).$getTexture()).$setFilter(cbgg_Texture$TextureFilter_Nearest, cbgg_Texture$TextureFilter_Nearest);
 },
 cpd_AssetLoader__clinit_ = () => {
     cpd_AssetLoader_PongLoader = cbga_AssetManager__init_2();
@@ -23610,12 +23615,12 @@ cbggg_Material__clinit_ = () => {
 function cbggg_TextureAtlas() {
     let a = this; jl_Object.call(a);
     a.$textures0 = null;
-    a.$regions = null;
+    a.$regions0 = null;
 }
 let cbggg_TextureAtlas__init_ = $this => {
     jl_Object__init_($this);
     $this.$textures0 = cbgu_ObjectSet__init_2(4);
-    $this.$regions = cbgu_Array__init_();
+    $this.$regions0 = cbgu_Array__init_();
 },
 cbggg_TextureAtlas__init_8 = () => {
     let var_0 = new cbggg_TextureAtlas();
@@ -23649,7 +23654,7 @@ cbggg_TextureAtlas__init_6 = (var_0, var_1, var_2) => {
 cbggg_TextureAtlas__init_0 = ($this, $data) => {
     jl_Object__init_($this);
     $this.$textures0 = cbgu_ObjectSet__init_2(4);
-    $this.$regions = cbgu_Array__init_();
+    $this.$regions0 = cbgu_Array__init_();
     $this.$load5($data);
 },
 cbggg_TextureAtlas__init_4 = var_0 => {
@@ -23669,7 +23674,7 @@ cbggg_TextureAtlas_load = ($this, $data) => {
         $page.$texture2.$setWrap($page.$uWrap1, $page.$vWrap1);
         $this.$textures0.$add($page.$texture2);
     }
-    $this.$regions.$ensureCapacity0($data.$regions1.$size0);
+    $this.$regions0.$ensureCapacity0($data.$regions1.$size0);
     var$2 = $data.$regions1.$iterator();
     while (var$2.$hasNext()) {
         $region = var$2.$next();
@@ -23691,19 +23696,19 @@ cbggg_TextureAtlas_load = ($this, $data) => {
         $atlasRegion.$values24 = $region.$values26;
         if ($region.$flip6)
             $atlasRegion.$flip(0, 1);
-        $this.$regions.$add2($atlasRegion);
+        $this.$regions0.$add2($atlasRegion);
     }
 },
 cbggg_TextureAtlas_getRegions = $this => {
-    return $this.$regions;
+    return $this.$regions0;
 },
 cbggg_TextureAtlas_findRegion = ($this, $name) => {
     let $i, $n;
     $i = 0;
-    $n = $this.$regions.$size0;
+    $n = $this.$regions0.$size0;
     while ($i < $n) {
-        if (($this.$regions.$get($i)).$name3.$equals($name))
-            return $this.$regions.$get($i);
+        if (($this.$regions0.$get($i)).$name3.$equals($name))
+            return $this.$regions0.$get($i);
         $i = $i + 1 | 0;
     }
     return null;
@@ -23711,10 +23716,10 @@ cbggg_TextureAtlas_findRegion = ($this, $name) => {
 cbggg_TextureAtlas_createSprite = ($this, $name) => {
     let $i, $n;
     $i = 0;
-    $n = $this.$regions.$size0;
+    $n = $this.$regions0.$size0;
     while ($i < $n) {
-        if (($this.$regions.$get($i)).$name3.$equals($name))
-            return cbggg_TextureAtlas_newSprite($this, $this.$regions.$get($i));
+        if (($this.$regions0.$get($i)).$name3.$equals($name))
+            return cbggg_TextureAtlas_newSprite($this, $this.$regions0.$get($i));
         $i = $i + 1 | 0;
     }
     return null;
@@ -36504,7 +36509,7 @@ cbgu_ArrayMap_entries = $this => {
 function cbggg_BitmapFont() {
     let a = this; jl_Object.call(a);
     a.$data1 = null;
-    a.$regions0 = null;
+    a.$regions = null;
     a.$cache0 = null;
     a.$flipped0 = 0;
     a.$integer0 = 0;
@@ -36590,17 +36595,17 @@ cbggg_BitmapFont__init_4 = ($this, $data, $pageRegions, $integer) => {
     $this.$data1 = $data;
     $this.$integer0 = $integer;
     if ($pageRegions !== null && $pageRegions.$size0) {
-        $this.$regions0 = $pageRegions;
+        $this.$regions = $pageRegions;
         $this.$ownsTexture = 0;
     } else {
         if ($data.$imagePaths === null)
             $rt_throw(jl_IllegalArgumentException__init_($rt_s(1017)));
         $n = $data.$imagePaths.data.length;
-        $this.$regions0 = cbgu_Array__init_0($n);
+        $this.$regions = cbgu_Array__init_0($n);
         $i = 0;
         while ($i < $n) {
             $file = $data.$fontFile === null ? cbg_Gdx_files.$internal($data.$imagePaths.data[$i]) : cbg_Gdx_files.$getFileHandle($data.$imagePaths.data[$i], $data.$fontFile.$type());
-            $this.$regions0.$add2(cbggg_TextureRegion__init_1(cbgg_Texture__init_2($file, 0)));
+            $this.$regions.$add2(cbggg_TextureRegion__init_1(cbgg_Texture__init_2($file, 0)));
             $i = $i + 1 | 0;
         }
         $this.$ownsTexture = 1;
@@ -36630,7 +36635,7 @@ cbggg_BitmapFont_load = ($this, $data) => {
                         break a;
                     $glyph = var$6[var$8];
                     if ($glyph !== null)
-                        $data.$setGlyphRegion($glyph, $this.$regions0.$get($glyph.$page));
+                        $data.$setGlyphRegion($glyph, $this.$regions.$get($glyph.$page));
                     var$8 = var$8 + 1 | 0;
                 }
             }
@@ -36638,7 +36643,7 @@ cbggg_BitmapFont_load = ($this, $data) => {
         var$4 = var$4 + 1 | 0;
     }
     if ($data.$missingGlyph !== null)
-        $data.$setGlyphRegion($data.$missingGlyph, $this.$regions0.$get($data.$missingGlyph.$page));
+        $data.$setGlyphRegion($data.$missingGlyph, $this.$regions.$get($data.$missingGlyph.$page));
 },
 cbggg_BitmapFont_draw = ($this, $batch, $str, $x, $y) => {
     let $layout;
@@ -36673,8 +36678,11 @@ cbggg_BitmapFont_getScaleX = $this => {
 cbggg_BitmapFont_getScaleY = $this => {
     return $this.$data1.$scaleY1;
 },
+cbggg_BitmapFont_getRegion = $this => {
+    return $this.$regions.$first();
+},
 cbggg_BitmapFont_getRegions = $this => {
-    return $this.$regions0;
+    return $this.$regions;
 },
 cbggg_BitmapFont_getLineHeight = $this => {
     return $this.$data1.$lineHeight;
@@ -36694,9 +36702,9 @@ cbggg_BitmapFont_dispose = $this => {
         if ($this.$ownsTexture) {
             $i = 0;
             while (true) {
-                if ($i >= $this.$regions0.$size0)
+                if ($i >= $this.$regions.$size0)
                     break a;
-                (($this.$regions0.$get($i)).$getTexture()).$dispose();
+                (($this.$regions.$get($i)).$getTexture()).$dispose();
                 $i = $i + 1 | 0;
             }
         }
@@ -38338,7 +38346,7 @@ cbggg_BitmapFontCache__init_ = ($this, $font, $integer) => {
     $this.$color13 = cbgg_Color__init_(1.0, 1.0, 1.0, 1.0);
     $this.$font2 = $font;
     $this.$integer = $integer;
-    $pageCount = $font.$regions0.$size0;
+    $pageCount = $font.$regions.$size0;
     if (!$pageCount)
         $rt_throw(jl_IllegalArgumentException__init_($rt_s(1027)));
     a: {
@@ -38556,8 +38564,8 @@ cbggg_BitmapFontCache_addToCache = ($this, $layout, $x, $y) => {
     $runCount = $layout.$runs.$size0;
     if (!$runCount)
         return;
-    if ($this.$pageVertices.data.length < $this.$font2.$regions0.$size0)
-        cbggg_BitmapFontCache_setPageCount($this, $this.$font2.$regions0.$size0);
+    if ($this.$pageVertices.data.length < $this.$font2.$regions.$size0)
+        cbggg_BitmapFontCache_setPageCount($this, $this.$font2.$regions.$size0);
     $this.$layouts.$add2($layout);
     cbggg_BitmapFontCache_requireGlyphs($this, $layout);
     $colors = $layout.$colors;
@@ -50727,7 +50735,7 @@ cbgssu_Skin_get = ($this, $name, $type) => {
     if ($type === $rt_cls(cbgssu_Drawable))
         return $this.$getDrawable0($name);
     if ($type === $rt_cls(cbggg_TextureRegion))
-        return $this.$getRegion($name);
+        return $this.$getRegion0($name);
     if ($type === $rt_cls(cbggg_NinePatch))
         return $this.$getPatch($name);
     if ($type === $rt_cls(cbggg_Sprite))
@@ -50790,7 +50798,7 @@ cbgssu_Skin_getPatch = ($this, $name) => {
         return $patch;
     a: {
         try {
-            $region = $this.$getRegion($name);
+            $region = $this.$getRegion0($name);
             if ($region instanceof cbggg_TextureAtlas$AtlasRegion) {
                 var$4 = $region;
                 $splits = var$4.$findValue($rt_s(1316));
@@ -50828,7 +50836,7 @@ cbgssu_Skin_getSprite = ($this, $name) => {
         return $sprite;
     a: {
         try {
-            $textureRegion = $this.$getRegion($name);
+            $textureRegion = $this.$getRegion0($name);
             if ($textureRegion instanceof cbggg_TextureAtlas$AtlasRegion) {
                 $region = $textureRegion;
                 if (!(!$region.$rotate0 && $region.$packedWidth == $region.$originalWidth && $region.$packedHeight == $region.$originalHeight))
@@ -50860,7 +50868,7 @@ cbgssu_Skin_getDrawable = ($this, $name) => {
         try {
             b: {
                 var$3 = $drawable;
-                $textureRegion = $this.$getRegion($name);
+                $textureRegion = $this.$getRegion0($name);
                 if ($textureRegion instanceof cbggg_TextureAtlas$AtlasRegion) {
                     var$3 = $drawable;
                     $region = $textureRegion;
@@ -79191,7 +79199,7 @@ cbgssu_TiledDrawable_draw1 = ($this, $batch, $x, $y, $width, $height) => {
     let $oldColor;
     $oldColor = $batch.$getPackedColor();
     $batch.$setColor(($batch.$getColor()).$mul($this.$color5));
-    cbgssu_TiledDrawable_draw0($batch, $this.$getRegion0(), $x, $y, $width, $height, $this.$scale6, $this.$align4);
+    cbgssu_TiledDrawable_draw0($batch, $this.$getRegion(), $x, $y, $width, $height, $this.$scale6, $this.$align4);
     $batch.$setPackedColor($oldColor);
 },
 cbgssu_TiledDrawable_draw0 = ($batch, $textureRegion, $x, $y, $width, $height, $scale, $align) => {
@@ -95409,7 +95417,7 @@ ju_ArrayDeque, 0, ju_AbstractCollection, [ju_Deque, jl_Cloneable, ji_Serializabl
 "$isEmpty", $rt_wrapFunction0(ju_ArrayDeque_isEmpty)],
 cbgssa_DelayAction, "DelayAction", 28, cbgssa_DelegateAction, [cbgssa_FinishableAction], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbgssa_DelayAction__init_), "$_init_11", $rt_wrapFunction1(cbgssa_DelayAction__init_0), "$delegate", $rt_wrapFunction1(cbgssa_DelayAction_delegate), "$restart", $rt_wrapFunction0(cbgssa_DelayAction_restart)],
 cbgssu_TextureRegionDrawable, "TextureRegionDrawable", 27, cbgssu_BaseDrawable, [cbgssu_TransformDrawable], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbgssu_TextureRegionDrawable__init_0), "$_init_145", $rt_wrapFunction1(cbgssu_TextureRegionDrawable__init_2), "$_init_129", $rt_wrapFunction1(cbgssu_TextureRegionDrawable__init_), "$_init_357", $rt_wrapFunction1(cbgssu_TextureRegionDrawable__init_1), "$draw0", function(var_1, var_2, var_3, var_4, var_5) { cbgssu_TextureRegionDrawable_draw0(this, var_1, var_2,
-var_3, var_4, var_5); }, "$draw10", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10) { cbgssu_TextureRegionDrawable_draw(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10); }, "$setRegion", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_setRegion), "$getRegion0", $rt_wrapFunction0(cbgssu_TextureRegionDrawable_getRegion), "$tint", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_tint)],
+var_3, var_4, var_5); }, "$draw10", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10) { cbgssu_TextureRegionDrawable_draw(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10); }, "$setRegion", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_setRegion), "$getRegion", $rt_wrapFunction0(cbgssu_TextureRegionDrawable_getRegion), "$tint", $rt_wrapFunction1(cbgssu_TextureRegionDrawable_tint)],
 ju_HashMap$AbstractMapIterator, 0, jl_Object, [], 0, 0, 0, ["$_init_53", $rt_wrapFunction1(ju_HashMap$AbstractMapIterator__init_), "$hasNext", $rt_wrapFunction0(ju_HashMap$AbstractMapIterator_hasNext), "$checkConcurrentMod", $rt_wrapFunction0(ju_HashMap$AbstractMapIterator_checkConcurrentMod), "$makeNext", $rt_wrapFunction0(ju_HashMap$AbstractMapIterator_makeNext)],
 jt_DecimalFormatSymbols, 0, jl_Object, [jl_Cloneable], 1, 0, 0, ["$_init_0", $rt_wrapFunction0(jt_DecimalFormatSymbols__init_1), "$_init_136", $rt_wrapFunction1(jt_DecimalFormatSymbols__init_0), "$getZeroDigit", $rt_wrapFunction0(jt_DecimalFormatSymbols_getZeroDigit), "$getGroupingSeparator", $rt_wrapFunction0(jt_DecimalFormatSymbols_getGroupingSeparator), "$getPerMill", $rt_wrapFunction0(jt_DecimalFormatSymbols_getPerMill), "$getPercent", $rt_wrapFunction0(jt_DecimalFormatSymbols_getPercent), "$getLocale",
 $rt_wrapFunction0(jt_DecimalFormatSymbols_getLocale), "$getDecimalSeparator", $rt_wrapFunction0(jt_DecimalFormatSymbols_getDecimalSeparator), "$getNaN", $rt_wrapFunction0(jt_DecimalFormatSymbols_getNaN), "$getInfinity", $rt_wrapFunction0(jt_DecimalFormatSymbols_getInfinity), "$getMinusSign", $rt_wrapFunction0(jt_DecimalFormatSymbols_getMinusSign), "$getExponentSeparator", $rt_wrapFunction0(jt_DecimalFormatSymbols_getExponentSeparator), "$clone0", $rt_wrapFunction0(jt_DecimalFormatSymbols_clone)],
@@ -95545,8 +95553,8 @@ cbgu_ArrayMap, "ArrayMap", 20, jl_Object, [jl_Iterable], 1, [0,0,0], 0, ["$_init
 "$resize1", $rt_wrapFunction1(cbgu_ArrayMap_resize), "$hashCode0", $rt_wrapFunction0(cbgu_ArrayMap_hashCode), "$equals", $rt_wrapFunction1(cbgu_ArrayMap_equals), "$toString", $rt_wrapFunction0(cbgu_ArrayMap_toString), "$entries0", $rt_wrapFunction0(cbgu_ArrayMap_entries)],
 cbggg_BitmapFont, "BitmapFont", 33, jl_Object, [cbgu_Disposable], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbggg_BitmapFont__init_2), "$_init_308", $rt_wrapFunction2(cbggg_BitmapFont__init_6), "$_init_194", $rt_wrapFunction3(cbggg_BitmapFont__init_1), "$_init_132", $rt_wrapFunction1(cbggg_BitmapFont__init_9), "$_init_196", $rt_wrapFunction2(cbggg_BitmapFont__init_3), "$_init_126", $rt_wrapFunction3(cbggg_BitmapFont__init_7), "$_init_193", $rt_wrapFunction4(cbggg_BitmapFont__init_0), "$_init_195", $rt_wrapFunction3(cbggg_BitmapFont__init_),
 "$_init_197", $rt_wrapFunction3(cbggg_BitmapFont__init_4), "$load7", $rt_wrapFunction1(cbggg_BitmapFont_load), "$draw6", $rt_wrapFunction4(cbggg_BitmapFont_draw), "$draw4", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9) { return cbggg_BitmapFont_draw1(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9); }, "$draw5", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9, var_10) { return cbggg_BitmapFont_draw0(this, var_1, var_2, var_3, var_4, var_5,
-var_6, var_7, var_8, var_9, var_10); }, "$getColor", $rt_wrapFunction0(cbggg_BitmapFont_getColor), "$setColor0", $rt_wrapFunction4(cbggg_BitmapFont_setColor), "$getScaleX", $rt_wrapFunction0(cbggg_BitmapFont_getScaleX), "$getScaleY", $rt_wrapFunction0(cbggg_BitmapFont_getScaleY), "$getRegions", $rt_wrapFunction0(cbggg_BitmapFont_getRegions), "$getLineHeight", $rt_wrapFunction0(cbggg_BitmapFont_getLineHeight), "$getCapHeight", $rt_wrapFunction0(cbggg_BitmapFont_getCapHeight), "$getDescent", $rt_wrapFunction0(cbggg_BitmapFont_getDescent),
-"$isFlipped", $rt_wrapFunction0(cbggg_BitmapFont_isFlipped), "$dispose", $rt_wrapFunction0(cbggg_BitmapFont_dispose), "$setUseIntegerPositions", $rt_wrapFunction1(cbggg_BitmapFont_setUseIntegerPositions), "$usesIntegerPositions", $rt_wrapFunction0(cbggg_BitmapFont_usesIntegerPositions), "$getData", $rt_wrapFunction0(cbggg_BitmapFont_getData), "$newFontCache", $rt_wrapFunction0(cbggg_BitmapFont_newFontCache), "$toString", $rt_wrapFunction0(cbggg_BitmapFont_toString)],
+var_6, var_7, var_8, var_9, var_10); }, "$getColor", $rt_wrapFunction0(cbggg_BitmapFont_getColor), "$setColor0", $rt_wrapFunction4(cbggg_BitmapFont_setColor), "$getScaleX", $rt_wrapFunction0(cbggg_BitmapFont_getScaleX), "$getScaleY", $rt_wrapFunction0(cbggg_BitmapFont_getScaleY), "$getRegion", $rt_wrapFunction0(cbggg_BitmapFont_getRegion), "$getRegions", $rt_wrapFunction0(cbggg_BitmapFont_getRegions), "$getLineHeight", $rt_wrapFunction0(cbggg_BitmapFont_getLineHeight), "$getCapHeight", $rt_wrapFunction0(cbggg_BitmapFont_getCapHeight),
+"$getDescent", $rt_wrapFunction0(cbggg_BitmapFont_getDescent), "$isFlipped", $rt_wrapFunction0(cbggg_BitmapFont_isFlipped), "$dispose", $rt_wrapFunction0(cbggg_BitmapFont_dispose), "$setUseIntegerPositions", $rt_wrapFunction1(cbggg_BitmapFont_setUseIntegerPositions), "$usesIntegerPositions", $rt_wrapFunction0(cbggg_BitmapFont_usesIntegerPositions), "$getData", $rt_wrapFunction0(cbggg_BitmapFont_getData), "$newFontCache", $rt_wrapFunction0(cbggg_BitmapFont_newFontCache), "$toString", $rt_wrapFunction0(cbggg_BitmapFont_toString)],
 jur_CIBackReferenceSet, "CIBackReferenceSet", 46, jur_JointSet, [], 0, [0,0,0], 0, ["$_init_63", $rt_wrapFunction2(jur_CIBackReferenceSet__init_), "$matches", $rt_wrapFunction3(jur_CIBackReferenceSet_matches), "$setNext", $rt_wrapFunction1(jur_CIBackReferenceSet_setNext), "$getString", $rt_wrapFunction1(jur_CIBackReferenceSet_getString), "$getName", $rt_wrapFunction0(jur_CIBackReferenceSet_getName), "$hasConsumed", $rt_wrapFunction1(jur_CIBackReferenceSet_hasConsumed)],
 jur_AbstractCharClass$1, "AbstractCharClass$1", 46, jur_AbstractCharClass, [], 0, 0, 0, ["$_init_60", $rt_wrapFunction2(jur_AbstractCharClass$1__init_), "$contains1", $rt_wrapFunction1(jur_AbstractCharClass$1_contains)],
 jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser, "DateTimeFormatterBuilder$WeekFieldsPrinterParser", 54, jl_Object, [jtf_DateTimeFormatterBuilder$DateTimePrinterParser], 16, [jtf_DateTimeFormatterBuilder,jtf_DateTimeFormatterBuilder,0], 0, ["$_init_36", $rt_wrapFunction2(jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser__init_0), "$print0", $rt_wrapFunction2(jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser_print), "$toString", $rt_wrapFunction0(jtf_DateTimeFormatterBuilder$WeekFieldsPrinterParser_toString)],
@@ -95824,7 +95832,7 @@ ju_HashMap$1, 0, ju_AbstractSet, [], 0, 0, 0, ["$_init_53", $rt_wrapFunction1(ju
 cbgm_GeometryUtils, 0, jl_Object, [], 17, 0, cbgm_GeometryUtils_$callClinit, 0,
 ju_HashMap$2, 0, ju_AbstractCollection, [], 0, 0, 0, ["$_init_53", $rt_wrapFunction1(ju_HashMap$2__init_), "$size", $rt_wrapFunction0(ju_HashMap$2_size), "$iterator0", $rt_wrapFunction0(ju_HashMap$2_iterator)],
 cbgssu_Skin, "Skin", 26, jl_Object, [cbgu_Disposable], 1, [0,0,0], cbgssu_Skin_$callClinit, ["$_init_0", $rt_wrapFunction0(cbgssu_Skin__init_), "$_init_132", $rt_wrapFunction1(cbgssu_Skin__init_0), "$_init_442", $rt_wrapFunction2(cbgssu_Skin__init_1), "$_init_240", $rt_wrapFunction1(cbgssu_Skin__init_2), "$load8", $rt_wrapFunction1(cbgssu_Skin_load), "$addRegions", $rt_wrapFunction1(cbgssu_Skin_addRegions), "$add13", $rt_wrapFunction2(cbgssu_Skin_add), "$add14", $rt_wrapFunction3(cbgssu_Skin_add0), "$get9",
-$rt_wrapFunction1(cbgssu_Skin_get0), "$get10", $rt_wrapFunction2(cbgssu_Skin_get), "$optional", $rt_wrapFunction2(cbgssu_Skin_optional), "$getRegion", $rt_wrapFunction1(cbgssu_Skin_getRegion), "$getRegions0", $rt_wrapFunction1(cbgssu_Skin_getRegions), "$getPatch", $rt_wrapFunction1(cbgssu_Skin_getPatch), "$getSprite", $rt_wrapFunction1(cbgssu_Skin_getSprite), "$getDrawable0", $rt_wrapFunction1(cbgssu_Skin_getDrawable), "$newDrawable0", $rt_wrapFunction2(cbgssu_Skin_newDrawable0), "$newDrawable", $rt_wrapFunction2(cbgssu_Skin_newDrawable),
+$rt_wrapFunction1(cbgssu_Skin_get0), "$get10", $rt_wrapFunction2(cbgssu_Skin_get), "$optional", $rt_wrapFunction2(cbgssu_Skin_optional), "$getRegion0", $rt_wrapFunction1(cbgssu_Skin_getRegion), "$getRegions0", $rt_wrapFunction1(cbgssu_Skin_getRegions), "$getPatch", $rt_wrapFunction1(cbgssu_Skin_getPatch), "$getSprite", $rt_wrapFunction1(cbgssu_Skin_getSprite), "$getDrawable0", $rt_wrapFunction1(cbgssu_Skin_getDrawable), "$newDrawable0", $rt_wrapFunction2(cbgssu_Skin_newDrawable0), "$newDrawable", $rt_wrapFunction2(cbgssu_Skin_newDrawable),
 "$scale2", $rt_wrapFunction1(cbgssu_Skin_scale), "$dispose", $rt_wrapFunction0(cbgssu_Skin_dispose), "$getJsonLoader", $rt_wrapFunction1(cbgssu_Skin_getJsonLoader)],
 jm_Elementary, 0, jl_Object, [], 0, 0, 0, 0,
 cbgssa_Actions$_clinit_$lambda$_77_6, "Actions$<clinit>$lambda$_77_6", 28, jl_Object, [cbgu_DefaultPool$PoolSupplier], 1, [0,0,0], 0, ["$_init_0", $rt_wrapFunction0(cbgssa_Actions$_clinit_$lambda$_77_6__init_), "$get19", $rt_wrapFunction0(cbgssa_Actions$_clinit_$lambda$_77_6_get0), "$get50", $rt_wrapFunction0(cbgssa_Actions$_clinit_$lambda$_77_6_get)],
@@ -98009,7 +98017,7 @@ $rt_reflection([
             ["draw", 1, $rt_voidcls, [cbggg_Batch, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls], o => o.$draw0],
             ["draw", 1, $rt_voidcls, [cbggg_Batch, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls, $rt_floatcls], o => o.$draw10],
             ["setRegion", 1, $rt_voidcls, [cbggg_TextureRegion], o => o.$setRegion],
-            ["getRegion", 1, cbggg_TextureRegion, 0, o => o.$getRegion0],
+            ["getRegion", 1, cbggg_TextureRegion, 0, o => o.$getRegion],
             ["tint", 1, cbgssu_Drawable, [cbgg_Color], o => o.$tint]
         ]
     }, 
@@ -99325,7 +99333,7 @@ $rt_reflection([
             ["getAll", 1025, cbgu_ObjectMap, [jl_Class], o => o.$getAll],
             ["getColor", 1025, cbgg_Color, [jl_String], o => o.$getColor1],
             ["getFont", 1025, cbggg_BitmapFont, [jl_String], o => o.$getFont],
-            ["getRegion", 1, cbggg_TextureRegion, [jl_String], o => o.$getRegion],
+            ["getRegion", 1, cbggg_TextureRegion, [jl_String], o => o.$getRegion0],
             ["getRegions", 1, cbgu_Array, [jl_String], o => o.$getRegions0],
             ["getTiledDrawable", 1025, cbgssu_TiledDrawable, [jl_String], o => o.$getTiledDrawable],
             ["getPatch", 1, cbggg_NinePatch, [jl_String], o => o.$getPatch],

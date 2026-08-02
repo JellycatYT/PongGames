@@ -79,7 +79,12 @@ public static void loadHUD() {
 	gameFont = PongLoader.get("Scene2d/source/GameFont.fnt"); 
 	infoFont = PongLoader.get("Scene2d/source/MenuFont.fnt");
 	skin = PongLoader.get("Scene2d/source/doPongStyle.json",Skin.class);
-
+	gameFont.getRegion().getTexture().setFilter(
+		    Texture.TextureFilter.Nearest,
+		    Texture.TextureFilter.Nearest
+		);
+	infoFont.getRegion().getTexture().setFilter(Texture.TextureFilter.Nearest,
+			Texture.TextureFilter.Nearest);
 }
 public static void unloadHUD() {
 	
