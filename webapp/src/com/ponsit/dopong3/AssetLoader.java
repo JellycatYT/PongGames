@@ -85,12 +85,12 @@ public static void unloadHUD() {
 	
 	PongLoader.unload("Scene2d/source/GameFont.fnt");
 	PongLoader.unload("Scene2d/source/MenuFont.fnt");
-	
+	PongLoader.unload("Scene2d/source/doPongStyle.json");
 }
 public static void unloadFont() {
 	PongLoader.unload("Scene2d/source/GameFont.fnt");
 	PongLoader.unload("Scene2d/source/MenuFont.fnt");
-
+	
 }
 public static void unloadGame() {
 	PongLoader.unload("Backgrounds/bg.png");

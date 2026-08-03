@@ -107,13 +107,22 @@
 		"over": "over"
 	},
 	"Buy": {
-		"font": "MenuFont",
+		"font": "GameFont",
 		"fontColor": "up",
 		"downFontColor": "down",
 		"overFontColor": "over",
 		"up": "ShopUp",
 		"down": "ShopDown",
 		"over": "ShopOver"
+	},
+	"Pong": {
+		"font": "GameFont",
+		"fontColor": "up",
+		"downFontColor": "down",
+		"overFontColor": "over",
+		"up": "PongBuyButton",
+		"down": "PongBuyButtonDown",
+		"over": "PongBuyButtonover"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {

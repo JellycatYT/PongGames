@@ -28,6 +28,8 @@ public class Menu extends ScreenAdapter{
 	Stage stage;
 	TextButton play;
 	TextButton quit;
+	TextButton shop;
+
 	public Menu(Main game) {
 		this.game = game;
 	}
@@ -42,6 +44,7 @@ public class Menu extends ScreenAdapter{
     	Gdx.input.setInputProcessor(stage);
     	play = new TextButton("Play",AssetLoader.skin);
     	quit = new TextButton("Quit", AssetLoader.skin);
+    	shop = new TextButton("SHOP", AssetLoader.skin,"Buy");
     	HUD = new Hud(game);
 
     	inputs();
@@ -51,6 +54,7 @@ public class Menu extends ScreenAdapter{
     	table.addAction(Actions.moveTo(0,0,0.6f));
     	table.setFillParent(true);
     	table.center();
+shop.addAction(Actions.moveTo(game.win.getWorldWidth()*0.009f,game.win.getWorldHeight()*0.15f,0.6f));
 
     	table.add(play)
     	     .width(380)
@@ -61,8 +65,9 @@ public class Menu extends ScreenAdapter{
     	table.add(quit)
     	     .width(380)
     	     .height(100).padBottom(-200);
-
+stage.addActor(shop);
 stage.addActor(table);
+
 System.out.println(
 	    Gdx.graphics.getWidth() + "x" + Gdx.graphics.getHeight() +
 	    " world=" +
@@ -75,6 +80,7 @@ System.out.println(
 
     	float w = game.win.getWorldWidth();
     	float h = game.win.getWorldHeight();
+
     	HUD.update();
     	HUD.debug();
     	
@@ -135,21 +141,45 @@ System.out.println(
     			
     		}
     	});
+    	shop.addListener(new ClickListener() {
+    		
+    		@Override
+    		
+    		public void clicked(InputEvent e, float x,float y) {
+    			
+    			if(table.getTouchable() == Touchable.disabled) return;
+    			isWeb();
+    			shop.addAction(Actions.sequence(
+    					Actions.parallel(
+    							Actions.fadeOut(1f)
+    							)
+    					)
+    					);
+    		
+    			table.setTouchable(Touchable.disabled);
+    			
+    			 fadeOut(() -> {
+    				 AssetLoader.unloadMenu();
+   					game.setScreen(new GameScreen(game));
+ 					
+    			 });
+    		
+    		}
+    	});
     }
+
+  
     private void fadeOut(Runnable nextAction) {
-    	table.clearActions();
-    	table.addAction(
+        table.clearActions();
 
-    			Actions.sequence(
-    					Actions.fadeOut(1f),
-    					Actions.fadeIn(0f),
-    					Actions.run(nextAction))
-    				 
-    			);
-
+        table.addAction(
+            Actions.sequence(
+                Actions.fadeOut(1f),
+                Actions.fadeIn(0f),
+                Actions.run(nextAction)
+            )
+        );
     }
-
-
     
     public void resize(int width,int heigth) {
      game.win.update(width, heigth,true);
@@ -159,7 +189,7 @@ System.out.println(
     	if(Gdx.input.isKeyJustPressed(Input.Keys.O)) {
     		fadeOut(()->{
 				AssetLoader.unloadMenu();
-
+				
     		});
 			game.setScreen(new Test(game));
     		    	

@@ -67,13 +67,6 @@ up
   orig: 110, 58
   offset: 0, 0
   index: -1
-GameFont
-  rotate: false
-  xy: 515, 1018
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
 Label
   rotate: false
   xy: 1, 339
@@ -107,6 +100,13 @@ panelBackground
   xy: 857, 916
   size: 20, 100
   orig: 20, 100
+  offset: 0, 0
+  index: -1
+GameFont
+  rotate: false
+  xy: 515, 1018
+  size: 512, 512
+  orig: 512, 512
   offset: 0, 0
   index: -1
 MenuFont1
