@@ -27,6 +27,8 @@ Label runtimeLabel;
 Label osLabel;
 Label clockLabel;
 Label platformLabel;
+Label lifeLabel;
+
 LocalTime clock = LocalTime.now();
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -44,6 +46,7 @@ public Hud(Main game) {
 	this.osLabel = new Label("OS: "+osName, AssetLoader.skin);
 	this.clockLabel = new Label("",  AssetLoader.skin);
 	this.platformLabel = new Label("Platform name"+Gdx.app.getType(),AssetLoader.skin);
+	this.lifeLabel = new Label("Life:"+data.getLife(), AssetLoader.skin);
 table.top();
 table.setFillParent(true);
 
@@ -55,6 +58,9 @@ table.add(clockLabel).expandX().right();
 table.row();
 table.add(scoreText).expandX().left();
 table.add(platformLabel).expandX().right();
+table.row();
+table.add(lifeLabel).expandX().left();
+
 }
 	public void update() {
 		fpsLabel.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
@@ -63,7 +69,8 @@ table.add(platformLabel).expandX().right();
 		clockLabel.setText("CLOCK: " + LocalTime.now().format(formatter));
 		osLabel.setText("OS: "+osName);
 		platformLabel.setText("Platform name="+Gdx.app.getType());
-		
+		lifeLabel.setText("Life:"+data.getLife());
+
 	}
 	public Stage getStage() {
 		return stage;

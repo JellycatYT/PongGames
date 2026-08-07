@@ -14,30 +14,32 @@ public class AssetLoader {
 	public static TextureAtlas atlas;
 	public static TextureAtlas PongAtlas;
 	public static TextureAtlas DropAtlas;
-	public static Texture menuBg;
+	public static Texture Bg0;
+	public static Texture gameBg;
 	public static Texture title;
+	public static Texture box;
 	public static Music ost1;
 	public static Music ost2;
 	public static BitmapFont gameFont;
 	public static BitmapFont infoFont;
-	public static Texture gameBg;
+	
 	public static final AssetManager PongLoader = new AssetManager();
 public static void loadMenu() {
 	PongLoader.load("Scene2d/source/doPongStyle.json", Skin.class, new SkinLoader.SkinParameter("Scene2d/source/doPongStyle.atlas"));
-	PongLoader.load("Backgrounds/MenuBgSmall.png",Texture.class);
+	PongLoader.load("Backgrounds/bg1.png",Texture.class);
 	PongLoader.load("Title/Title.png",Texture.class);
 	PongLoader.load("Sounds/Music/menu.ogg", Music.class);
 	PongLoader.finishLoading();
 
 	
-	menuBg = PongLoader.get("Backgrounds/MenuBgSmall.png", Texture.class);
+	Bg0 = PongLoader.get("Backgrounds/bg1.png", Texture.class);
 	skin = PongLoader.get("Scene2d/source/doPongStyle.json",Skin.class);
 	title = PongLoader.get("Title/Title.png",Texture.class);
 	ost1 = PongLoader.get("Sounds/Music/menu.ogg", Music.class);
 }
 public static void unloadMenu() {
 	PongLoader.unload("Scene2d/source/doPongStyle.json");
-	PongLoader.unload("Backgrounds/MenuBgSmall.png");
+	PongLoader.unload("Backgrounds/bg1.png");
 	PongLoader.unload("Title/Title.png");
 	PongLoader.unload("Sounds/Music/menu.ogg");
 
@@ -96,6 +98,17 @@ public static void unloadGame() {
 	PongLoader.unload("Backgrounds/bg.png");
 	PongLoader.unload("Sounds/Music/DO!DO!Pong3.1.ogg");
 
+}
+public static void loadShop() {
+	PongLoader.load("Backgrounds/bg1.png", Texture.class);
+	PongLoader.load("Scene2d/GUI/Label.png",Texture.class);
+	PongLoader.finishLoading();
+	Bg0 = PongLoader.get("Backgrounds/bg1.png");
+	box = PongLoader.get("Scene2d/GUI/Label.png");
+
+}
+public static void unloadShop() {
+	PongLoader.unload("Backgrounds/bg1.png");
 }
 
 }

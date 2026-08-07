@@ -1,6 +1,5 @@
-Backgrounds/Grass.png
-Backgrounds/MenuBgSmall.png
 Backgrounds/bg.png
+Backgrounds/bg1.png
 Droplets/droplets.atlas
 Droplets/droplets.png
 Pongs/Pong.atlas
@@ -15,6 +14,8 @@ Scene2d/Button/down.png
 Scene2d/Button/over.png
 Scene2d/Button/up.png
 Scene2d/Font/GameFont.fnt
+Scene2d/Font/InfoFont.fnt
+Scene2d/Font/InfoFont.png
 Scene2d/Font/MenuFont.fnt
 Scene2d/GUI/Label.png
 Scene2d/GUI/LabelOver.png
@@ -23,6 +24,7 @@ Scene2d/GUI/panel.png
 Scene2d/GUI/panelBackground.png
 Scene2d/source/GameFont.fnt
 Scene2d/source/GameFont.png
+Scene2d/source/InfoFont.fnt
 Scene2d/source/MenuFont.fnt
 Scene2d/source/MenuFont1.png
 Scene2d/source/MenuFont2.png

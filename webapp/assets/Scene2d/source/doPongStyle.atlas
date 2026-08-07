@@ -4,121 +4,135 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
+bg1
+  rotate: false
+  xy: 515, 1165
+  size: 480, 360
+  orig: 480, 360
+  offset: 0, 0
+  index: -1
 PongBuyButton
   rotate: false
-  xy: 1, 62
+  xy: 1029, 1599
   size: 209, 275
   orig: 209, 275
   offset: 0, 0
   index: -1
 PongBuyButtonDown
   rotate: false
-  xy: 515, 580
+  xy: 1, 61
   size: 209, 275
   orig: 209, 275
   offset: 0, 0
   index: -1
 PongBuyButtonover
   rotate: false
-  xy: 1029, 1094
+  xy: 515, 727
   size: 209, 275
   orig: 209, 275
   offset: 0, 0
   index: -1
 ShopDown
   rotate: false
-  xy: 223, 390
+  xy: 1251, 1927
   size: 118, 112
   orig: 118, 112
   offset: 0, 0
   index: -1
 ShopOver
   rotate: false
-  xy: 737, 904
+  xy: 223, 385
   size: 118, 112
   orig: 118, 112
   offset: 0, 0
   index: -1
 ShopUp
   rotate: false
-  xy: 1251, 1418
+  xy: 737, 1051
   size: 118, 112
   orig: 118, 112
   offset: 0, 0
   index: -1
 down
   rotate: false
-  xy: 1, 1
+  xy: 1029, 1538
   size: 110, 59
   orig: 110, 59
   offset: 0, 0
   index: -1
 over
   rotate: false
-  xy: 515, 520
+  xy: 1, 1
   size: 110, 58
   orig: 110, 58
   offset: 0, 0
   index: -1
 up
   rotate: false
-  xy: 1029, 1034
+  xy: 515, 667
   size: 110, 58
   orig: 110, 58
   offset: 0, 0
   index: -1
+InfoFont
+  rotate: false
+  xy: 1, 499
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
 Label
   rotate: false
-  xy: 1, 339
+  xy: 1029, 1876
   size: 220, 163
   orig: 220, 163
   offset: 0, 0
   index: -1
 LabelOver
   rotate: false
-  xy: 515, 857
+  xy: 1, 338
   size: 220, 159
   orig: 220, 159
   offset: 0, 0
   index: -1
 LabelUp
   rotate: false
-  xy: 1029, 1371
+  xy: 515, 1004
   size: 220, 159
   orig: 220, 159
   offset: 0, 0
   index: -1
 panel
   rotate: false
-  xy: 343, 402
+  xy: 997, 1425
   size: 20, 100
   orig: 20, 100
   offset: 0, 0
   index: -1
 panelBackground
   rotate: false
-  xy: 857, 916
+  xy: 1371, 1939
   size: 20, 100
   orig: 20, 100
   offset: 0, 0
   index: -1
 GameFont
   rotate: false
-  xy: 515, 1018
+  xy: 515, 1527
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 MenuFont1
   rotate: false
-  xy: 1, 1018
+  xy: 1, 1527
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 MenuFont2
   rotate: false
-  xy: 1, 504
+  xy: 1, 1013
   size: 512, 512
   orig: 512, 512
   offset: 0, 0

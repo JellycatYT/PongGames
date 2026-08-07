@@ -2,6 +2,7 @@ package Entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
@@ -15,7 +16,6 @@ public class Droplet {
 	GameData data;
 	TextureRegion poisonDrop;
 	TextureRegion droplet;
-	float rotation = 0;
 	int skinID = 0;
 	Main game;
 public Array<Sprite> drops;
@@ -51,6 +51,9 @@ public void DropLogic(float delta) {
 		waterS.setRegion(poisonDrop);
 	}else if(random <= 70) {
 		waterS.setRegion(droplet);
+	}else{
+		waterS.setRegion(droplet);
+		waterS.setColor(Color.RED);
 	}
 	/*
 	 else {

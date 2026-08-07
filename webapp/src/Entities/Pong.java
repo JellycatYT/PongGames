@@ -76,10 +76,16 @@ for(int i = drops.getDrops().size - 1; i >= 0;i--) {
 			data.addScore(-1);
 			data.addLife(-1);
 
-		}else {
+		}else if(waterS.getColor().equals(Color.RED)) {
+			System.out.println(waterS.getColor());
+			player.setColor(Color.RED);
+			data.addScore(1000);
+		}
+		else {
 			player.setColor(Color.WHITE);
 			data.addScore(1);
 		}
+		
 		drops.drops.removeIndex(i);
 
 		
