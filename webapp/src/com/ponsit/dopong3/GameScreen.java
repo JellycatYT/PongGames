@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 import Entities.Droplet;
 import Entities.Pong;
+import System.AssetLoader;
 import System.GameData;
 import System.Hud;
 

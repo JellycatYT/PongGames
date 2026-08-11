@@ -9,7 +9,7 @@ private int skinID;
 private int score = 0;
 private int life = 3;
 private Set<Integer> unlockedSkins = new HashSet<>();
-
+public String[] skins = {" WaterHoader Pong"," PaintHoader Pong"};
 public int getSkinID() {
 	return skinID;
 }
@@ -30,6 +30,9 @@ public boolean isUnlocked(int id) {
 }
 public void addScore(int add) {
 score += add;
+}
+public void takeScore(int add) {
+score -= add;
 }
 public int getLife() {
 	return life;

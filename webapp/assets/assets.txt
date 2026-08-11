@@ -20,6 +20,8 @@ Scene2d/Font/MenuFont.fnt
 Scene2d/GUI/Label.png
 Scene2d/GUI/LabelOver.png
 Scene2d/GUI/LabelUp.png
+Scene2d/GUI/icons/icons.atlas
+Scene2d/GUI/icons/icons.png
 Scene2d/GUI/panel.png
 Scene2d/GUI/panelBackground.png
 Scene2d/source/GameFont.fnt
@@ -32,7 +34,6 @@ Scene2d/source/doPongStyle.atlas
 Scene2d/source/doPongStyle.json
 Scene2d/source/doPongStyle.png
 Sounds/Music/DO!DO!Pong3.1.ogg
-Sounds/Music/Do!Do!Pong Game Theme final version.ogg
 Sounds/Music/menu.ogg
 Sounds/Sounds/Hurt2.ogg
 Sounds/Sounds/click.ogg

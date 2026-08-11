@@ -8,9 +8,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.ponsit.dopong3.AssetLoader;
 import com.ponsit.dopong3.Main;
 
+import System.AssetLoader;
 import System.GameData;
 
 public class Pong {
@@ -78,8 +78,15 @@ for(int i = drops.getDrops().size - 1; i >= 0;i--) {
 
 		}else if(waterS.getColor().equals(Color.RED)) {
 			System.out.println(waterS.getColor());
-			player.setColor(Color.RED);
-			data.addScore(1000);
+			player.setColor(MathUtils.random(),MathUtils.random(),MathUtils.random(),1f);
+			data.addScore(3);
+			
+		}else if(waterS.getColor().equals(Color.GOLD)) {
+			System.out.println(waterS.getColor());
+			player.setAlpha(MathUtils.random(0f,1f));
+
+			data.addScore(3*2);
+			
 		}
 		else {
 			player.setColor(Color.WHITE);

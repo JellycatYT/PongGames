@@ -13,6 +13,8 @@ i:b:/Scene2d/Font/InfoFont.fnt:21671:1
 i:b:/Scene2d/Font/GameFont.fnt:11125:1
 i:b:/Scene2d/Font/InfoFont.png:107079:1
 i:b:/Scene2d/Font/MenuFont.fnt:21831:1
+i:b:/Scene2d/GUI/icons/icons.png:104412:1
+i:b:/Scene2d/GUI/icons/icons.atlas:87:1
 i:b:/Scene2d/GUI/LabelOver.png:13826:1
 i:b:/Scene2d/GUI/panelBackground.png:1048:1
 i:b:/Scene2d/GUI/panel.png:1476:1
@@ -32,9 +34,8 @@ i:b:/Backgrounds/bg.png:182537:1
 i:b:/Backgrounds/bg1.png:212145:1
 i:b:/Droplets/droplets.atlas:92:1
 i:b:/Droplets/droplets.png:16484:1
-i:b:/assets.txt:1065:1
+i:b:/assets.txt:1070:1
 i:b:/Sounds/Music/DO!DO!Pong3.1.ogg:183971:1
-i:b:/Sounds/Music/Do!Do!Pong Game Theme final version.ogg:102565:1
 i:b:/Sounds/Music/menu.ogg:87686:1
 i:b:/Sounds/Sounds/hit1.ogg:6423:1
 i:b:/Sounds/Sounds/Hurt2.ogg:10221:1
