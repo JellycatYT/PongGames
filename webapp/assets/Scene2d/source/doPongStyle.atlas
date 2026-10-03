@@ -4,7 +4,7 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-bg1
+bg0
   rotate: false
   xy: 515, 1165
   size: 480, 360

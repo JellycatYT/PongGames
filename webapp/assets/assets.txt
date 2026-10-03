@@ -1,9 +1,13 @@
+Backgrounds/Pongi.png
 Backgrounds/bg.png
-Backgrounds/bg1.png
+Backgrounds/bg0.png
 Droplets/droplets.atlas
 Droplets/droplets.png
+Map/MapPoints/Point.png
+Map/World Map1.png
 Pongs/Pong.atlas
 Pongs/Pong.png
+Pongs/Pong1.png
 Scene2d/Button/PongBuyButton.png
 Scene2d/Button/PongBuyButtonDown.png
 Scene2d/Button/PongBuyButtonover.png
@@ -35,7 +39,10 @@ Scene2d/source/doPongStyle.json
 Scene2d/source/doPongStyle.png
 Sounds/Music/DO!DO!Pong3.1.ogg
 Sounds/Music/menu.ogg
-Sounds/Sounds/Hurt2.ogg
-Sounds/Sounds/click.ogg
-Sounds/Sounds/hit1.ogg
+Sounds/Sounds/score.ogg
 Title/Title.png
+csv/Level1.csv
+csv/Level2.csv
+csv/Maps/Map1.csv
+csv/Maps/Map2.csv
+csv/text/Info.csv

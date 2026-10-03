@@ -2,7 +2,13 @@
 "com.badlogic.gdx.graphics.g2d.BitmapFont": {
 	"GameFont": {
 		"file": "GameFont.fnt",
-		"scaledSize": -1,
+		"scaledSize": 31,
+		"markupEnabled": false,
+		"flip": false
+	},
+	"GameFont1": {
+		"file": "GameFont.fnt",
+		"scaledSize": 14,
 		"markupEnabled": false,
 		"flip": false
 	},
@@ -57,6 +63,10 @@
 	"text": {
 		"font": "InfoFont",
 		"fontColor": "up"
+	},
+	"Box": {
+		"font": "GameFont1",
+		"background": "LabelOver"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle": {
@@ -164,7 +174,8 @@
 	"default": {
 		"background": "Label",
 		"titleFont": "InfoFont",
-		"stageBackground": "bg1"
+		"titleFontColor": "up",
+		"stageBackground": "bg0"
 	}
 }
 }

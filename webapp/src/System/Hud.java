@@ -85,6 +85,9 @@ table.add(lifeLabel).expandX().left();
 
 			}
 	}
+		
+	}
+	public void hide() {
+		stage.getRoot().setVisible(false);
 	}
 	}
-

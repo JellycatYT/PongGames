@@ -9,6 +9,7 @@ private int skinID;
 private int score = 0;
 private int life = 3;
 private Set<Integer> unlockedSkins = new HashSet<>();
+private boolean cleared[] = new boolean[CsvLoader.Levels.length];
 public String[] skins = {" WaterHoader Pong"," PaintHoader Pong"};
 public int getSkinID() {
 	return skinID;
@@ -42,6 +43,18 @@ public void setLife(int life) {
 }
 public void addLife(int add) {
 life += add;
+}
+public void clearLevel(int levelID) {
+	cleared[levelID] = true;
+}
+public boolean isLevelCleared(int levelID) {
+	return cleared[levelID];
+}
+public boolean isLevelUnlocked(int levelID) {
+	if(levelID == 0) {
+		return true;
+	}
+	return cleared[levelID - 1];
 }
 
 }

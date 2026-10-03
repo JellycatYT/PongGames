@@ -1,8 +1,8 @@
 package com.ponsit.dopong3.teavm;
 
 import com.github.xpenatan.gdx.teavm.backends.web.WebApplicationConfiguration;
-import com.github.xpenatan.gdx.teavm.backends.web.WebApplication;
 import com.ponsit.dopong3.Main;
+import com.github.xpenatan.gdx.teavm.backends.web.WebApplication;
 
 /**
  * Launches the TeaVM/HTML application.
