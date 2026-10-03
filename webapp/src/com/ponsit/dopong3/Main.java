@@ -16,7 +16,6 @@ public SpriteBatch batch;
 public GameData data;
 
 	public void create() {
-		Gdx.net.openURI("https://jellycatyt.github.io/PongGames/webapp/");
 data = new GameData();
 save = new SaveData();
 save.load(data);
