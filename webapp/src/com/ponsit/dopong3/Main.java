@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import Screens.Menu;
+import SpringConnector.HttpActions;
+import SpringConnector.Links;
 import System.GameData;
 import System.SaveData;
 
@@ -14,9 +16,13 @@ public SaveData save;
 public ExtendViewport win;
 public SpriteBatch batch;
 public GameData data;
-
+HttpActions httpAction;
 	public void create() {
-data = new GameData();
+		Links link = Links.POST;
+		httpAction = new HttpActions();
+		
+		
+		data = new GameData();
 save = new SaveData();
 save.load(data);
 		batch = new SpriteBatch();

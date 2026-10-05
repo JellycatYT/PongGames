@@ -58,7 +58,8 @@ public void resizeUI() {
     panel.setPosition(width*0.1f, height*0.1f);
     
 	panel.setSize(width*0.35f, height*0.35f);    
-
+	float scale = width / 2000;
+	lista.getStyle().font.getData().setScale(scale);
 }
 	
 	public void show() {
@@ -139,8 +140,9 @@ public void listInput() {
 			point.Goto(pong, StageId, select);
 			cam.zoom = 1f;
 			lista.clear();
-			game.setScreen(new GameScreenCSV(game,StageId));
-			
+			if(data.isLevelUnlocked(StageId)) {
+			    game.setScreen(new GameScreenCSV(game, StageId));
+			}			
 	
 		}});
 }
